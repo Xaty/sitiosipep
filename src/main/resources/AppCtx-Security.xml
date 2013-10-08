@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<http use-expressions="true">
+	    
+        <http-basic/>
+        
+		<intercept-url pattern='/index.htm' filters='none' access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    	<intercept-url pattern='/login' filters='none'/>
+  
+    	<intercept-url pattern='/resolver/evaluador/proyectos' access="hasRole('EVALUADOR')"/>
+    	<intercept-url pattern='/resolver/evaluador/evaluacion/mostrar/rubrica/presentacion/*' access="hasRole('EVALUADOR')"/>
+    	<intercept-url pattern='/resolver/evaluador/evaluacion/mostrar/rubrica/categoria/*' access="hasRole('EVALUADOR')"/>
+    	<intercept-url pattern='/resolver/evaluador/evaluacion/rubrica/save' access="hasRole('EVALUADOR')"/>
+    	<intercept-url pattern='/resolver/evaluacion/all' access="hasRole('ADMINISTRADOR')"/>
+    	<intercept-url pattern='/resolver/evaluacion/*/proyectos' access="hasRole('ADMINISTRADOR')"/>
+    	<intercept-url pattern='/resolver/evaluacion/evaluadores/*' access="hasRole('ADMINISTRADOR')"/>
+    	<intercept-url pattern='/resolver/evaluacion/evaluadores/form' access="hasRole('ADMINISTRADOR')"/>
+    	<intercept-url pattern='/resolver/manager/*' />
+    	
+	    
+	    
+        <form-login login-page="/resolver/login" 
+        			default-target-url="/resolver/index.htm" 
+        			always-use-default-target="true"
+        			authentication-success-handler-ref="securityHandler" 
+        			authentication-failure-handler-ref="securityHandler" 
+        			authentication-failure-url="/resolver/user_disabled.htm"/>
+        
+        <logout 
+        	invalidate-session="true" 
+        	logout-success-url="/resolver/login" 
+        	logout-url="/j_spring_security_logout"/>
+        
+		<remember-me key="generador-encuestas" />
+		<session-management session-fixation-protection="newSession" >
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="false"/>
+		</session-management>
+	 </http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service
+				authorities-by-username-query="select u.nombre_usuario, r.role from usuario u, usuario_roles ur, roles r where u.nombre_usuario = ?  and ur.nombre_usuario =  u.nombre_usuario and ur.id_role = r.id_role"
+				data-source-ref="dataSource"
+				users-by-username-query="select nombre_usuario, clave as password, activo as enabled from usuario where nombre_usuario = ?" />
+		</authentication-provider>
+	</authentication-manager>
+	 
+	<beans:bean id="securityHandler" class="edu.mx.utvm.eproyectos.security.SecurityHandler"/>
+	 
+	 
+</beans:beans>
