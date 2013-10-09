@@ -25,23 +25,34 @@
 				<br/>
 				<a href="${pageContext.request.contextPath}/web/public/tips">/public/tips - GET</a>
 			</dd>
-			
-			<dt>Pantalla  Egresado</dt>
-			<dd>
-				Pantallas egresados
-				<br/>
-				<a href="${pageContext.request.contextPath}/web/egresado/competencias-profesionales">/public/competencias-profesionales - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/egresado/contactanos">/public/contactanos - GET</a>
-				<a href="${pageContext.request.contextPath}/web/egresado/cursos">/egresados/cursos - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/experiencia">/public/experiencia - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/formacion">/public/formacion - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/idiomas">/public/idiomas - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/informacion-empresa">/public/informacion-empresa - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/lista-empresa">/public/lista-empresa - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/perfil">/public/perfil - GET</a>
-				<a href="${pageContext.request.contextPath}/web/public/registro">/public/registro - GET</a>
-			</dd>
 						
+			<dt>Pantalla 12 - Alta a empresas</dt>
+			<dd>
+				Esta pantalla muestra el formulario que permite dar de alta una empresa
+				<br/>
+				<a href="${pageContext.request.contextPath}/web/administrador/alta-empresa">/public/tips - GET</a>
+			</dd>			
+
+			<dt>Pantalla 13 - Asignar ofertas</dt>
+			<dd>
+				Esta pantalla muestra el formulario que permite asignar una oferta
+				<br/>
+				<a href="${pageContext.request.contextPath}/web/administrador/asignar-oferta">/public/tips - GET</a>
+			</dd>			
+			
+			<dt>Pantalla 14 - Envio de ofertas laborales</dt>
+			<dd>
+				Esta pantalla muestra el formulario que permite enviar las ofertas 
+				<br/>
+				<a href="${pageContext.request.contextPath}/web/public/administrador/envio-ofertas-laborales">/public/tips - GET</a>
+			</dd>			
+					
+			<dt>Pantalla 15 - Alta ofertas</dt>
+			<dd>
+				Esta pantalla muestra el formulario que permite dar de alta una empresa
+				<br/>
+				<a href="${pageContext.request.contextPath}/web/public/administrador/subir-oferta">/public/tips - GET</a>
+			</dd>			
 		</dl>
 
 	</div>
