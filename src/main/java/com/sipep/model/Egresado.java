@@ -23,7 +23,7 @@ public class Egresado {
 	 * se elimina atributo edad por que se puede calcular en base a la fecha de
 	 * nacimiento
 	 */
-	private byte[] cedulaProfesional; // imagen
+	private String cedulaProfesional; // imagen	
 	private byte[] fotografia; // imagen
 
 	/*
@@ -32,13 +32,14 @@ public class Egresado {
 	 */
 	public Egresado(String nombre, String apellidoPaterno,
 			String apellidoMaterno, String curp, String correo, Sexo sexo,
-			String estatus) {
+			Estatus estatus) {
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
 		this.curp = curp;
 		this.correo = correo;
 		this.sexo = sexo;
+		this.estatus = estatus;
 	}
 
 	/*
@@ -62,11 +63,11 @@ public class Egresado {
 	public void actualizarPerfil() {}
 	public void actualizarCurriculum() {}
 
-	public byte[] getCedulaProfesional() {
+	public String getCedulaProfesional() {
 		return cedulaProfesional;
 	}
 
-	public void setCedulaProfesional(byte[] cedulaProfesional) {
+	public void setCedulaProfesional(String cedulaProfesional) {
 		this.cedulaProfesional = cedulaProfesional;
 	}
 
