@@ -44,14 +44,14 @@
 			<dd>
 				Esta pantalla muestra el formulario que permite enviar las ofertas 
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/public/administrador/envio-ofertas-laborales">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/envio-ofertas-laborales">/public/tips - GET</a>
 			</dd>			
 					
 			<dt>Pantalla 15 - Alta ofertas</dt>
 			<dd>
 				Esta pantalla muestra el formulario que permite dar de alta una empresa
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/public/administrador/subir-oferta">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/subir-oferta">/public/tips - GET</a>
 			</dd>			
 		</dl>
 
