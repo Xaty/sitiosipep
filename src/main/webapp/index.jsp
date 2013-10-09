@@ -16,14 +16,14 @@
 			<dd>
 				Esta pantalla muestra el inicio del sitio web
 				<br/>
-				<a href="${pageContext.request.contextPath}/index.jsp">Ver</a>
+				<a href="${pageContext.request.contextPath}/web/public/index">/public/index - GET</a>
 			</dd>
 			
-			<dt>Pantalla 2 - Login</dt>
+			<dt>Pantalla 2 - Tips</dt>
 			<dd>
-				Esta pantalla muestra el login al sistema
+				Esta pantalla muestra los tips
 				<br/>
-				<a href="${pageContext.request.contextPath}/index.jsp">Ver</a>
+				<a href="${pageContext.request.contextPath}/web/public/tips">/public/tips - GET</a>
 			</dd>			
 		</dl>
 

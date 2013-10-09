@@ -65,7 +65,7 @@
 	<!-- Rutal del despachador de MVC -->
 	<servlet-mapping>
 		<servlet-name>resolver</servlet-name>
-		<url-pattern>/resolver/*</url-pattern>
+		<url-pattern>/web/*</url-pattern>
 	</servlet-mapping>
 
 	<!-- Archivo de bienvenida -->

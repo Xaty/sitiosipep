@@ -10,7 +10,7 @@
     <title>SIPEP Primer Empleo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
@@ -32,11 +32,11 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="C:\Users\LUIS\Desktop\sipep\index.html">Home</a></li>
 
-          <li><a href="#">Notificaciones</a></li>
+          <!--li><a href="#">Notificaciones</a></li>
           <li><a href="#">Perfil</a></li>
-          <li><a href="#">Curriculum</a></li>
+          <li><a href="#">Curriculum</a></li-->
 
         </ul>
 	<img src="img/sipep.png"/>
@@ -44,32 +44,42 @@
       </div>
 
       <!-- titulo de formulario -->
-      <h3>Ofertas laborales</h3>
+      <h3 align="center">Cat&aacute;logo de Empresas</h3>
 
       <div class="row marketing">
         <div class="col-lg-12">
-		<form role="form">
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Email address</label>
-		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputFile">File input</label>
-		    <input type="file" id="exampleInputFile">
-		    <p class="help-block">Example block-level help text here.</p>
-		  </div>
-		  <div class="checkbox">
-		    <label>
-		      <input type="checkbox"> Check me out
-		    </label>
-		  </div>
-		  <button type="submit" class="btn btn-default">Submit</button>
-		</form>
-
+            
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label>logotipo</label>
+                        </td>
+                        <td>
+                            <label>nombre</label>
+                        </td>
+                        <td>
+                            <label>giro</label>
+                        </td>
+                        <td>Ver m&aacute;s...</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="C:\Users\LUIS\Desktop\sipep\img\google.jpg">
+                        </td>
+                        <td>
+                            <label>Google, inc.</label>
+                        </td>
+                        <td>
+                            <label>Vendedora de Servicios</label>
+                        </td>
+                        <td>
+                            <a href="C:\Users\LUIS\Desktop\sipep\infoempresa.html">Ver m&aacute;s</a>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
 
         </div>
       </div>

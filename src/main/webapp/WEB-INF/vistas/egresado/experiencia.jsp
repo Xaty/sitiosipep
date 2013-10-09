@@ -10,7 +10,7 @@
     <title>SIPEP Primer Empleo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
@@ -52,46 +52,69 @@
       </div>
 
       <!-- titulo de formulario -->
-      <h3 align="center">Cursos</h3>
-
+      <h3 align="center">Experiencia</h3>
       <div class="row marketing">
-        <div class="col-lg-12">
-		<!-- formulario -->
-						<form class="form-horizontal"role="form">
-							<div class="form-group">
-								 <label class="col-lg-3 control-label" >Periodo del curso:</label>
-								  <div class="col-lg-8">
-								  <input type="email" class="form-control" id="exampleAñoI" placeholder="Ejemplo: 2009 - 2012" >
-								  </div>
-							</div>
-					<div class="form-group">
-								 <label class="col-lg-3 control-label" >Institucion:</label>
-								  <div class="col-lg-8">		
-										
-											<input type="email" class="form-control" id="exampleInputEmail1">
-									</div>
-				  </div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label" >Nombre de Capacitación:</label>
-							<div class="col-lg-8">
-								<input type="password" class="form-control" id="exampleInputPassword1">
-							</div>
-							</div>
-                                                    <div>
-                                                        <button type="button" class="btn btn-info">+</button>
-                                                    </div>
-								
-				 
-				 <div class="col-lg-10" align="center">
-					  <button type="submit" class="btn btn-default">Guardar</button>
-					  <button type="submit" class="btn btn-default">Cancelar</button>
-				  </div>
-				</form>
+	  
+        <div class="col-lg-12">		
+		
+		<form  class="form-horizontal" role="form">
+		  
+		  <div class="form-group">
+		   	<label class="col-lg-3 control-label">Periodo Laboral:</label>
+				<div class="col-lg-8">
+					<input type="txt" class="form-control" id="txtPeriodoLaoral"placeholder="Ejemplo: 1990-2003">
+			 </div>	
+		  </div>
+		  
+		<div class="form-group">
+			<label class="col-lg-3 control-label">Nombre de la Empresa:</label>
+				<div class="col-lg-8">
+					<input type="txt"  class="form-control" id="txtNomEpresa">
+				</div>
+		</div>
+		 
+		<div class="form-group">
+		  	<label class="col-lg-3 control-label">Dirección:</label>
+				<div class="col-lg-8">
+					<input type="txt" class="form-control" id="txtDirEmpresa">
+				</div>
+		</div>
+		  
+		  <div class="form-group">
+		  	<label class="col-lg-3 control-label">Puesto Desempeñado:</label>
+				<div class="col-lg-8">
+					<input type="txt" class="form-control" id="txtPuestDese">
+				</div>
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="col-lg-3 control-label">Funciones:</label>
+				<div class="col-lg-8" >
+					<textarea type="txt" class="form-control" id="txtFun" rows=4></textarea>
+				</div>  
+		 </div>
+		  
+		 <div class="form-group">			
+				<label class="col-lg-3 control-label">Logros:</label>
+					<div class="col-lg-8">
+						<textarea class="form-control" id="txtLogros" rows=4></textarea>
+					</div>
+		  </div>
+		
+		 <div align="center">
+			
+				<br/>
+				<button type="submit" class="btn btn-default">Guardar</button>
+				<button type="submit" class="btn btn-default">Actualizar</button>
+				<button type="submit" class="btn btn-default">Cancelar</button>
+			
+		  </div>
+			  
+		</form>
+
 
         </div>
       </div>
-	  
-	  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
       <div class="footer" align="center">
         <p>Todos los derechos reservados de &copy; SIPEP 2013 - Sistema de Integraci&oacuten al Primer Empleo</p>

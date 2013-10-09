@@ -10,7 +10,7 @@
     <title>SIPEP Primer Empleo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
@@ -34,9 +34,17 @@
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="C:\Users\LUIS\Desktop\sipep\index.html">Home</a></li>
 
-          <!--li><a href="#">Notificaciones</a></li>
-          <li><a href="#">Perfil</a></li>
-          <li><a href="#">Curriculum</a></li-->
+          <li><a href="C:\Users\LUIS\Desktop\sipep\listaempresas.html">Notificaciones</a></li>
+          <li><a href="C:\Users\LUIS\Desktop\sipep\perfil.html">Perfil</a></li>
+          <li><a>Curriculum</a>
+              <ul>
+                  <li><a href="C:\Users\LUIS\Desktop\sipep\formacion.html">Formaci&oacute;n acad&eacute;mica</a></li>
+                  <li><a href="C:\Users\LUIS\Desktop\sipep\experiencia.html">Experiencia</a></li>
+                  <li><a href="C:\Users\LUIS\Desktop\sipep\cursos.html">Cursos</a></li>
+                  <li><a href="C:\Users\LUIS\Desktop\sipep\competenciasPro.html">Competencias</a></li>
+                  <li><a href="C:\Users\LUIS\Desktop\sipep\idiomas.html">Idiomas</a></li>
+              </ul>
+          </li>
 
         </ul>
 	<img src="img/sipep.png"/>
@@ -44,47 +52,33 @@
       </div>
 
       <!-- titulo de formulario -->
-      <h3 align="center">Cat&aacute;logo de Empresas</h3>
+      <h3 align="center">Competencias Profesionales</h3>
 
       <div class="row marketing">
         <div class="col-lg-12">
-            
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td>
-                            <label>logotipo</label>
-                        </td>
-                        <td>
-                            <label>nombre</label>
-                        </td>
-                        <td>
-                            <label>giro</label>
-                        </td>
-                        <td>Ver m&aacute;s...</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="C:\Users\LUIS\Desktop\sipep\img\google.jpg">
-                        </td>
-                        <td>
-                            <label>Google, inc.</label>
-                        </td>
-                        <td>
-                            <label>Vendedora de Servicios</label>
-                        </td>
-                        <td>
-                            <a href="C:\Users\LUIS\Desktop\sipep\infoempresa.html">Ver m&aacute;s</a>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
+		<!-- formulario -->
+						<form class="form-horizontal" role="form">
+				  <div class="form-group">
+
+						<label class="col-lg-3 control-label">Describe tus Habilidades:</label>
+                                                					<div class="col-lg-8">
+						<textarea class="form-control" rows="3"></textarea>
+					</div>	
+				  </div>
+					
+				  
+				 
+                                                    <div align="center">
+				  <button type="submit" class="btn btn-default">Guardar</button>
+				  <button type="submit" class="btn btn-default">Cancelar</button>
+                                                    </div>
+				</form>
 
         </div>
       </div>
+	  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-      <div class="footer">
+      <div class="footer" align="center">
         <p>Todos los derechos reservados de &copy; SIPEP 2013 - Sistema de Integraci&oacuten al Primer Empleo</p>
       </div>
 

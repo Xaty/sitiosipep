@@ -10,7 +10,7 @@
     <title>SIPEP Primer Empleo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
@@ -52,50 +52,51 @@
       </div>
 
       <!-- titulo de formulario -->
-      <h3 align="center">Formación Academica</h3>
-      <div class="row marketing" height=700>
-        <div class="col-lg-12">
-		
-		<form class="form-horizontal" role="form">
-		
-		  <div class="form-group">
-			<label class="col-lg-3 control-label">Nombre Institución:</label>
-				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtNoInst">
-				</div>
-		 </div>
-		  
-		 <div class="form-group">
-		    <label class="col-lg-3 control-label">Nombre del Programa Educativo:</label>
-				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtPE" >
-				</div>
-		</div>
-		  
-		  
-		  <div class="form-group">
-		  	<label class="col-lg-3 control-label">Especialidad:</label>
-				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtEspe" >
-				</div>
-		   </div>
-		  		  	  
-		<div align="center">
-			<br/> 
-			  <button type="submit" class="btn btn-default">Guardar</button>
-			  <button type="submit" class="btn btn-default">Actualizar</button>
-			  <button type="submit" class="btn btn-default">Cancelar</button>
-		</div>
-	  
-		</form>
+      <h3 align="center">Idiomas</h3>
 
+      <div class="row marketing">
+        <div class="col-lg-12">
+		<!-- formulario -->
+		
+				<form class="form-horizontal"role="form">
+				
+				  <div class="form-group">
+					
+						<label class="col-lg-3 control-label">Idioma:</label>
+						<div class="col-lg-8">
+						<input type="email" class="form-control" id="exampleInputIdio">
+						</div>	
+				  </div>
+				  <BR>
+				  <div class="form-group">
+				
+						<label class="col-lg-3 control-label">Nivel:</label>
+					
+					<div class="col-lg-8" >
+						<select class="form-control"><option>Ninguno</option>
+							<option>Básico</option>
+							<option>Intermedio</option>
+							<option>Avanzado</option>
+						</select>
+					</div>
+					
+					
+					</div>
+                                  <div>
+                                        <button type="button" class="btn btn-info">+</button>
+                                  </div>
+				  
+				 
+				<div align="center">
+				  <button type="submit" class="btn btn-default" >Guardar</button>
+				  <button type="submit" class="btn btn-default">Cancelar</button>
+				</div>
+				</form>
+				
 
         </div>
       </div>
-	  
-	  <br/> <br/><br/><br/> <br/><br/><br/><br/><br/>
-
-
+	  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <div class="footer" align="center">
         <p>Todos los derechos reservados de &copy; SIPEP 2013 - Sistema de Integraci&oacuten al Primer Empleo</p>
       </div>
