@@ -17,28 +17,28 @@ public class PaginasAdministradorController {
 	@RequestMapping(value = "/alta-empresa", method = RequestMethod.GET)
 	public ModelAndView paginaAltaEmpresa(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("alta-empresa");
+		ModelAndView model = new ModelAndView("administrador/alta-empresa");
 		return model;
 	}
 	
 	@RequestMapping(value = "/asignar-oferta", method = RequestMethod.GET)
 	public ModelAndView paginaAsignarOferta(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("asignar-oferta");
+		ModelAndView model = new ModelAndView("administrador/asignar-oferta");
 		return model;
 	}
 	
 	@RequestMapping(value = "/envio-ofertas-laborales", method = RequestMethod.GET)
 	public ModelAndView paginaEnvioOfertasLaborales(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("envio-ofertas-laborales");
+		ModelAndView model = new ModelAndView("administrador/envio-ofertas-laborales");
 		return model;
 	}
 	
 	@RequestMapping(value = "/subir-oferta", method = RequestMethod.GET)
 	public ModelAndView paginaSubirOferta(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("subir-oferta");
+		ModelAndView model = new ModelAndView("administrador/subir-oferta");
 		return model;
 	}
 }

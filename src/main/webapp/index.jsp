@@ -30,28 +30,28 @@
 			<dd>
 				Esta pantalla muestra el formulario que permite dar de alta una empresa
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/administrador/alta-empresa">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/alta-empresa">/administrador/alta-empresa - GET</a>
 			</dd>			
 
 			<dt>Pantalla 13 - Asignar ofertas</dt>
 			<dd>
 				Esta pantalla muestra el formulario que permite asignar una oferta
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/administrador/asignar-oferta">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/asignar-oferta">/administrador/asignar-oferta - GET</a>
 			</dd>			
 			
 			<dt>Pantalla 14 - Envio de ofertas laborales</dt>
 			<dd>
 				Esta pantalla muestra el formulario que permite enviar las ofertas 
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/administrador/envio-ofertas-laborales">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/envio-ofertas-laborales">/administrador/envio-ofertas-laborales - GET</a>
 			</dd>			
 					
 			<dt>Pantalla 15 - Alta ofertas</dt>
 			<dd>
 				Esta pantalla muestra el formulario que permite dar de alta una empresa
 				<br/>
-				<a href="${pageContext.request.contextPath}/web/administrador/subir-oferta">/public/tips - GET</a>
+				<a href="${pageContext.request.contextPath}/web/administrador/subir-oferta">/administrador/subir-oferta - GET</a>
 			</dd>			
 		</dl>
 
