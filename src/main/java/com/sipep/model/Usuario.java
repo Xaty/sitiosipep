@@ -1,30 +1,34 @@
 package com.sipep.model;
-import com.sipep.model.*;
 
 public class Usuario {
 	
-	public Egresado egresado;
-	private Administrador administrador;
-	public String contrasena;
-	
-	public void setContrasena(String contrasena){
-		this.contrasena = contrasena;
+	private String usuario;
+	private String clave;
+	private Rol rol;
+
+	/*
+	 * Atributos necesarios del usuario
+	 * */
+	public Usuario(String usuario, String clave, Rol rol) {
+		this.usuario = usuario;
+		this.clave = clave;
+		this.rol = rol;
 	}
 	
-	public String getContrasena(){
-		return contrasena;
+	public void crearCuenta(){}
+	public void iniciarSesion(){}
+	public void cerrarSesion(){}
+
+	public String getUsuario() {
+		return usuario;
 	}
-	
-	public void crearCuenta(){
-		
+
+	public String getClave() {
+		return clave;
 	}
-	
-	public void iniciarSesion(){
-		
-	}
-	
-	public void cerrarSesion(){
-		
+
+	public Rol getRol() {
+		return rol;
 	}
 
 }

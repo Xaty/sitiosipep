@@ -1,6 +1,9 @@
 package com.sipep.model;
-
-public class Idiomas {
+/*
+ * autor: manu
+ * modifcado por: mracapri
+ * */
+public class Idioma {
 	
 	public String idioma;
 	public String nivel;

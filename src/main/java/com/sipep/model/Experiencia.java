@@ -1,8 +1,11 @@
 package com.sipep.model;
-
+/*
+ * autor: manu
+ * modifcado por: mracapri
+ * */
 public class Experiencia {
 	
-	public String nomEmpresa;
+	public String nombreEmpresa;
 	public String direccion;
 	public String puesto;
 	public String duracion;
