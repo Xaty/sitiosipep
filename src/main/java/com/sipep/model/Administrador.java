@@ -12,6 +12,19 @@ public class Administrador{
 		return nombre;
 	}
 	
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	
+	public String getCorreo(){
+		return correo;
+	}
+	
+	public Administrador(String correo, String nombre){
+		this.correo = correo;
+		this.nombre = nombre;
+	}
+	
 	public void creaOferta(){}
 	public void asignarOferta(){}
 	public void enviarCorreo(){}
