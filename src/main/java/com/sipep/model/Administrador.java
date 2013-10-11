@@ -25,13 +25,4 @@ public class Administrador{
 		this.nombre = nombre;
 	}
 	
-	public void creaOferta(){}
-	public void asignarOferta(){}
-	public void enviarCorreo(){}
-	public void altaEmpresa(){}
-	public void bajaEmpresa(){}
-	public void consultarOferta(){}
-	public void verCurriculum(){}
-	public void subirOferta(){}
-	
 }
