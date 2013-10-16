@@ -7,6 +7,7 @@ import java.util.Date;
  * */
 public class Egresado {
 
+	private String idEgresado;
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
@@ -30,9 +31,10 @@ public class Egresado {
 	 * Recibe los valores minimos obligatorios y siginificativos para el
 	 * egresado
 	 */
-	public Egresado(String nombre, String apellidoPaterno,
+	public Egresado(String id, String nombre, String apellidoPaterno,
 			String apellidoMaterno, String curp, String correo, Sexo sexo,
 			Estatus estatus) {
+		this.idEgresado = id;
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;

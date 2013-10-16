@@ -6,6 +6,7 @@ package com.sipep.model;
  * */
 public class Experiencia {
 
+	public String idExperiencia;
 	public String nombreEmpresa;
 	public String direccion;
 	public String puesto;
@@ -13,8 +14,10 @@ public class Experiencia {
 	public String funciones;
 	public String logros;
 
-	public Experiencia(String nombreEmpresa, String direccion, String puesto,
+	public Experiencia(String idExperiencia, String nombreEmpresa, String direccion, String puesto,
 			String duracion, String funciones, String logros) {
+		
+		this.idExperiencia = idExperiencia;
 		this.nombreEmpresa = nombreEmpresa;
 		this.direccion = direccion;
 		this.puesto = puesto;

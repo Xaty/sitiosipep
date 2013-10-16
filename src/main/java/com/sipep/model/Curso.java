@@ -5,11 +5,13 @@ package com.sipep.model;
  * */
 public class Curso {
 
+	public String idCapacitacion;
 	public String nombreCapacitacion;
 	public String institucion;
 	public String periodoDelCurso;
 	
-	public Curso(String nombreCapacitacion, String institucion, String periodoDelCurso){
+	public Curso(String idCapacitacion,String nombreCapacitacion, String institucion, String periodoDelCurso){
+		this.idCapacitacion = idCapacitacion;
 		this.nombreCapacitacion = nombreCapacitacion;
 		this.institucion = institucion;
 		this.periodoDelCurso = periodoDelCurso;

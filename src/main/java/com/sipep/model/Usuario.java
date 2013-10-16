@@ -2,6 +2,7 @@ package com.sipep.model;
 
 public class Usuario {
 	
+	private String id;
 	private String usuario;
 	private String clave;
 	private Rol rol;
@@ -9,7 +10,8 @@ public class Usuario {
 	/*
 	 * Atributos necesarios del usuario
 	 * */
-	public Usuario(String usuario, String clave, Rol rol) {
+	public Usuario(String id, String usuario, String clave, Rol rol) {
+		this.id = id;
 		this.usuario = usuario;
 		this.clave = clave;
 		this.rol = rol;

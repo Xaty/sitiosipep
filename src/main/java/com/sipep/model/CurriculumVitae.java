@@ -9,13 +9,18 @@ import java.util.List;
  * */
 public class CurriculumVitae {
 	
+	private String id;
 	private List<FormacionAcademica> formacionesAcademicas;
 	private List<Experiencia> experiencias;
 	private List<Curso> cursos;
 	private List<Idioma> idiomas;
 	private String habilidades;
+	private Egresado egresado;
 	
-	public CurriculumVitae() {
+	
+	public CurriculumVitae(String id, Egresado egresado) {
+		this.id = id;
+		this.egresado = egresado;
 		formacionesAcademicas = new ArrayList<FormacionAcademica>();
 		experiencias = new ArrayList<Experiencia>();
 		cursos = new ArrayList<Curso>();

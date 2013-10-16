@@ -3,6 +3,7 @@ package com.sipep.model;
 
 public class Empresa {
 
+	public String idEmpresa;
 	public byte[] logotipo;
 	public String nombre;
 	public String giro;
@@ -10,8 +11,9 @@ public class Empresa {
 	public String email;
 	public String direccion;
 
-	public Empresa(String nombre, String direccion, String giro,
+	public Empresa(String idEmpresa, String nombre, String direccion, String giro,
 			String clasificacion, String email) {
+		this.idEmpresa = idEmpresa;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.giro = giro;

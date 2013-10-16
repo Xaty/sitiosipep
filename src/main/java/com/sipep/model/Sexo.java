@@ -1,17 +1,17 @@
 package com.sipep.model;
 
 public enum Sexo {
-	MASCULINO(1, "Masculino"), FEMENINO(2, "Femenino");
+	MASCULINO("M", "Masculino"), FEMENINO("F", "Femenino");
 
-	private int idSexo;
+	private String idSexo;
 	private String descripcion;
 
-	private Sexo(int idSexo, String descripcion) {
+	private Sexo(String idSexo, String descripcion) {
 		this.idSexo = idSexo;
 		this.descripcion = descripcion;
 	}
 
-	public int getIdSexo() {
+	public String getIdSexo() {
 		return idSexo;
 	}
 

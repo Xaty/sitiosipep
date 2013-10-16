@@ -5,10 +5,12 @@ package com.sipep.model;
  * */
 public class Idioma {
 	
+	public String idIdioma;
 	public String idioma;
 	public String nivel;
 	
-	public Idioma( String idioma, String nivel){
+	public Idioma(String idIdioma, String idioma, String nivel){
+		this.idIdioma = idIdioma;
 		this.idioma = idioma;
 		this.nivel = nivel;
 	}

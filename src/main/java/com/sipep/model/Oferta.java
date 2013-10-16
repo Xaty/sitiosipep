@@ -6,6 +6,7 @@ public class Oferta {
 
 	// TODO: Privar todos los atributos de las clases y definir los acceso por
 	// get-set
+	public String idOferta;
 	public String nombre;
 	public String area;
 	public Date fecha;
@@ -14,8 +15,9 @@ public class Oferta {
 	public String empresa;
 
 	// TODO: Definir constructor para valores minimos obligatorios
-	public Oferta(String nombre, String area, Date fecha, String descripcion,
+	public Oferta(String idOferta, String nombre, String area, Date fecha, String descripcion,
 			String requisitos, String empresa) {
+		this.idOferta = idOferta;
 		this.nombre = nombre;
 		this.area = area;
 		this.fecha = fecha;
