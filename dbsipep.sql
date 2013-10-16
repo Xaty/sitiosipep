@@ -28,9 +28,11 @@ create table egresado(
 
 create table curso(
 	id_curso int primary key not null,
-	nombre_Capacitacion varchar(20) not null,
+	nombre_capacitacion varchar(20) not null,
 	institucion varchar(30) not null,
-	periodoCurso varchar(15) not null
+	periodo_curso varchar(15) not null,
+	id_curriculum int,
+	foreign key (id_curriculum) references curriculum(id_curriculum)
 );
 
 create table formacion_academica(

@@ -1,4 +1,5 @@
 package com.sipep.model;
+
 /*
  * autor: manu
  * modifcado por: mracapri
@@ -9,12 +10,15 @@ public class Curso {
 	public String nombreCapacitacion;
 	public String institucion;
 	public String periodoDelCurso;
-	
-	public Curso(String idCapacitacion,String nombreCapacitacion, String institucion, String periodoDelCurso){
+	public CurriculumVitae curriculumVitae;
+
+	public Curso(String idCapacitacion, String nombreCapacitacion,
+			String institucion, String periodoDelCurso, CurriculumVitae curriculum) {
 		this.idCapacitacion = idCapacitacion;
 		this.nombreCapacitacion = nombreCapacitacion;
 		this.institucion = institucion;
 		this.periodoDelCurso = periodoDelCurso;
+		this.curriculumVitae = curriculum;
 	}
 
 	public String getNombreCapacitacion() {
@@ -32,7 +36,9 @@ public class Curso {
 	public String getIdCapacitacion() {
 		return idCapacitacion;
 	}
-	
-	
+
+	public CurriculumVitae getCurriculumVitae() {
+		return curriculumVitae;
+	}
 
 }
