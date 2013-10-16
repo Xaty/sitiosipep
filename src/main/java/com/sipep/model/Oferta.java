@@ -73,4 +73,12 @@ public class Oferta {
 	public String getEmpresa() {
 		return empresa;
 	}
+
+	public void setIdOferta(String idOferta) {
+		this.idOferta = idOferta;
+	}
+	
+	public String getIdOferta() {
+		return idOferta;
+	}
 }

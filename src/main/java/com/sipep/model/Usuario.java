@@ -33,4 +33,7 @@ public class Usuario {
 		return rol;
 	}
 
+	public String getId() {
+		return id;
+	}
 }

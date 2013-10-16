@@ -7,10 +7,11 @@ public class TestUsuario {
 	@Test
 	
 	public void casoPrueba9(){
-		Usuario u = new Usuario("josep", "103555", Rol.EGRESADO);
+		Usuario u = new Usuario("1", "josep", "103555", Rol.EGRESADO);
 		
 		Assert.assertNotNull(u);
 		
+		Assert.assertTrue(u.getId().equals("1"));
 		Assert.assertTrue(u.getUsuario().equals("josep"));
 		Assert.assertTrue(u.getClave().equals("103555"));
 		Assert.assertTrue(u.getRol().getIdRole() == Rol.EGRESADO.getIdRole());

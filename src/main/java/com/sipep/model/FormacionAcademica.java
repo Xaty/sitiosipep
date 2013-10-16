@@ -29,7 +29,9 @@ public class FormacionAcademica {
 	public String getEspecialidad() {
 		return especialidad;
 	}
-	
-	
 
+	public String getIdFormacionAcademica() {
+		return idFormacionAcademica;
+	}
+	
 }

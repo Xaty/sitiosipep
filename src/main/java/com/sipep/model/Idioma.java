@@ -22,7 +22,9 @@ public class Idioma {
 	public String getNivel() {
 		return nivel;
 	}
-	
-	
 
+	public String getIdIdioma() {
+		return idIdioma;
+	}
+	
 }
