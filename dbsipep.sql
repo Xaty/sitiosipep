@@ -15,7 +15,7 @@ create table egresado(
 	id_egresado varchar(10) not null,
 	nombre varchar(30) not null,
 	apellido_paterno varchar(30) not null,
-	apelldo_materno varchar(30) not null,
+	apellido_materno varchar(30) not null,
 	curp varchar(18),
 	correo varchar(30) not null,
 	sexo varchar(1),
@@ -31,16 +31,6 @@ create table curso(
 	nombre_Capacitacion varchar(20) not null,
 	institucion varchar(30) not null,
 	periodoCurso varchar(15) not null
-);
-
-create table experiencia(
-	id_experiencia int primary key,
-	nombre_Empresa varchar(30) not null,
-	direccion varchar(50) not null,
-	puesto varchar(20) not null,
-	duracion varchar(20) not null,
-	funciones varchar(50),
-	logros varchar(60)
 );
 
 create table formacion_academica(
@@ -91,12 +81,22 @@ create table curriculum(
 	id_curriculum int,
 	habilidades varchar(50) not null,
 	id_formacion int not null,
-	id_experiencia int not null,
 	id_curso int not null,
 	id_idioma int not null,
 	primary key (id_curriculum),
-	foreign key fk1 (id_formacion) references formacion_academica(id_formacion),
-	foreign key fk2 (id_experiencia) references experiencia(id_experiencia),
-	foreign key fk3 (id_curso) references curso(id_curso),
-	foreign key fk4 (id_idioma) references idioma(id_idioma)
+	foreign key (id_formacion) references formacion_academica(id_formacion),
+	foreign key (id_curso) references curso(id_curso),
+	foreign key (id_idioma) references idioma(id_idioma)
+);
+
+create table experiencia(
+	id_experiencia int primary key,
+	nombre_Empresa varchar(30) not null,
+	direccion varchar(50) not null,
+	puesto varchar(20) not null,
+	duracion varchar(20) not null,
+	funciones varchar(50),
+	logros varchar(60),
+	id_curriculum int,
+	foreign key (id_curriculum) references curriculum(id_curriculum)
 );

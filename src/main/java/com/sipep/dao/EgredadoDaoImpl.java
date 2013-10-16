@@ -31,16 +31,17 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 	public void create(Egresado newInstance) {
 		this.update(
 				"INSERT INTO " +
-				"egresado(nombre, apellidoPaterno, ApellidoMaterno, curp, correo, sexo, estatus)" +
-				"VALUES(?,?)",
+				"egresado(id_egresado, nombre, apellido_paterno, apellido_materno, curp, correo, sexo, estatus) " +
+				"VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
 				new Object[] {
+						newInstance.getIdEgresado(),
 						newInstance.getNombre(),
 						newInstance.getApellidoPaterno(),
 						newInstance.getApellidoMaterno(),
 						newInstance.getCurp(),
 						newInstance.getCorreo(),
-						newInstance.getSexo(),
-						newInstance.getEstatus()
+						newInstance.getSexo().getIdSexo(),
+						newInstance.getEstatus().getIdEstatus()
 				});
 		
 	}
@@ -55,10 +56,10 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 						@Override
 						public Egresado mapRow(ResultSet rs, int rowNum) throws SQLException {
 							Egresado egresado= new Egresado(
-									rs.getString("idEgresado"), 
+									rs.getString("id_egresado"), 
 									rs.getString("nombre"),
-									rs.getString("apellidoPaterno"),
-									rs.getString("apellidoMaterno"),
+									rs.getString("apellido_paterno"),
+									rs.getString("apellido_materno"),
 									rs.getString("curp"),
 									rs.getString("correo"),
 									Sexo.get(rs.getString("sexo")),

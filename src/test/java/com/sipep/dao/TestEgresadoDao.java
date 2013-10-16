@@ -36,5 +36,14 @@ public class TestEgresadoDao {
 		Egresado read = egresadoDao.read(egr.getIdEgresado());
 		
 		Assert.assertNotNull(read);
+		
+		Assert.assertTrue(read.getIdEgresado().equals("1"));
+		Assert.assertTrue(read.getNombre().equals("juan"));
+		Assert.assertTrue(read.getApellidoPaterno().equals("perez"));
+		Assert.assertTrue(read.getApellidoMaterno().equals("perez"));
+		Assert.assertTrue(read.getCurp().equals("gaga0sga87g7asf"));
+		Assert.assertTrue(read.getCorreo().equals("jpp@hotmail.com"));
+		Assert.assertTrue(read.getSexo().getIdSexo() == Sexo.MASCULINO.getIdSexo());
+		Assert.assertTrue(read.getEstatus().getIdEstatus() == Estatus.ACTIVO.getIdEstatus());
 	}
 }
