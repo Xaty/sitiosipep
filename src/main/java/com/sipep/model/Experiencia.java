@@ -13,9 +13,10 @@ public class Experiencia {
 	public String duracion;
 	public String funciones;
 	public String logros;
+	public CurriculumVitae curriculumVitae;
 
 	public Experiencia(String idExperiencia, String nombreEmpresa, String direccion, String puesto,
-			String duracion, String funciones, String logros) {
+			String duracion, String funciones, String logros, CurriculumVitae curriculum) {
 		
 		this.idExperiencia = idExperiencia;
 		this.nombreEmpresa = nombreEmpresa;
@@ -24,6 +25,7 @@ public class Experiencia {
 		this.duracion = duracion;
 		this.funciones = funciones;
 		this.logros = logros;
+		this.curriculumVitae = curriculum;
 	}
 	
 	public String getNombreEmpresa() {
@@ -61,7 +63,9 @@ public class Experiencia {
 	public void setIdExperiencia(String idExperiencia) {
 		this.idExperiencia = idExperiencia;
 	}
-	
-	
+
+	public CurriculumVitae getCurriculumVitae() {
+		return curriculumVitae;
+	}
 
 }
