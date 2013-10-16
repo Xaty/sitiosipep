@@ -121,4 +121,8 @@ public class Egresado {
 		return fechaNacimiento;
 	}
 
+	public String getIdEgresado() {
+		return idEgresado;
+	}
+
 }

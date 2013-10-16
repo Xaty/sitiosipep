@@ -9,7 +9,7 @@ import java.util.List;
  * */
 public class CurriculumVitae {
 	
-	private String id;
+	private String idCurriculum;
 	private List<FormacionAcademica> formacionesAcademicas;
 	private List<Experiencia> experiencias;
 	private List<Curso> cursos;
@@ -19,7 +19,7 @@ public class CurriculumVitae {
 	
 	
 	public CurriculumVitae(String id, Egresado egresado) {
-		this.id = id;
+		this.idCurriculum = id;
 		this.egresado = egresado;
 		formacionesAcademicas = new ArrayList<FormacionAcademica>();
 		experiencias = new ArrayList<Experiencia>();
@@ -49,6 +49,10 @@ public class CurriculumVitae {
 
 	public List<Idioma> getIdiomas() {
 		return idiomas;
+	}
+
+	public String getIdCurriculum() {
+		return idCurriculum;
 	}
 
 	

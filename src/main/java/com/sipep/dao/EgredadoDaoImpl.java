@@ -1,5 +1,6 @@
 package com.sipep.dao;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -8,13 +9,14 @@ import javax.sql.DataSource;
 
 import org.hibernate.validator.util.privilegedactions.NewInstance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.mysql.jdbc.ResultSet;
 import com.sipep.model.Egresado;
 import com.sipep.model.Estatus;
+import com.sipep.model.Sexo;
 @Repository
 public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 
@@ -44,7 +46,7 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 	}
 
 	@Override
-	public Egresado read(Integer id) {
+	public Egresado read(String id) {
 		String sql = "select * from egresado where id_egresado = ?";
 		try {
 			Egresado resultado = this.queryForObject(sql,
@@ -52,7 +54,16 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 					new RowMapper<Egresado>() {
 						@Override
 						public Egresado mapRow(ResultSet rs, int rowNum) throws SQLException {
-							Egresado egresado= new Egresado(rs.getInt("id_egresado"), rs.getString("descripcion"));							
+							Egresado egresado= new Egresado(
+									rs.getString("idEgresado"), 
+									rs.getString("nombre"),
+									rs.getString("apellidoPaterno"),
+									rs.getString("apellidoMaterno"),
+									rs.getString("curp"),
+									rs.getString("correo"),
+									Sexo.get(rs.getString("sexo")),
+									Estatus.get(rs.getInt("estatus"))
+									);							
 							return egresado;
 						}
 					});
@@ -95,8 +106,17 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 		List<Egresado> result = this.query(sql, new RowMapper<Egresado>() {
 			@Override
 			public Egresado mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Egresado e = new Egresado(rs.getInt("id_egresado"));
-				return e;
+				Egresado egresado= new Egresado(
+						rs.getString("idEgresado"), 
+						rs.getString("nombre"),
+						rs.getString("apellidoPaterno"),
+						rs.getString("apellidoMaterno"),
+						rs.getString("curp"),
+						rs.getString("correo"),
+						Sexo.get(rs.getString("sexo")),
+						Estatus.get(rs.getInt("estatus"))
+						);
+				return egresado;
 			}
 		});
 		return result;
@@ -104,14 +124,7 @@ public class EgredadoDaoImpl extends JdbcTemplate implements EgresadoDao{
 
 	@Override
 	public List<Egresado> findAllByEstatus(Estatus estatus) {
-		//String sql = "SELECT e.estatus FROM egresado e, estatus es where e.id_estatus = es.id_estatus";
-		//List<Egresado> result = this.query(sql, new RowMapper<Egresado>(){
-		//	@Override
-		//	public Egresado mapRow(ResultSet rs, int rowNum) throws SQLException{
-		//		Egresado e = new Egresado(rs.getInt("idEstatus"));
-		//		return e;
-		//	}
-		//});
+		return null;
 	}
 
 }

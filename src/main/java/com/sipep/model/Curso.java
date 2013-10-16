@@ -28,6 +28,10 @@ public class Curso {
 	public String getPeriodoDelCurso() {
 		return periodoDelCurso;
 	}
+
+	public String getIdCapacitacion() {
+		return idCapacitacion;
+	}
 	
 	
 

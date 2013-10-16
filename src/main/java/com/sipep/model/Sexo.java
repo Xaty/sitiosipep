@@ -18,4 +18,15 @@ public enum Sexo {
 	public String getDescripcion() {
 		return descripcion;
 	}
+	
+	public static Sexo get(String value){
+		Sexo result = null;
+		if(value.equals("M")){
+			result = Sexo.MASCULINO;
+		}else if(value.equals("F")){
+			result = Sexo.FEMENINO;
+			
+		}
+		return result;
+	}
 }

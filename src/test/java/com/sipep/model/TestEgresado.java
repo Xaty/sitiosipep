@@ -8,11 +8,12 @@ public class TestEgresado {
 	@Test
 	public void casoPrueba1(){
 		
-		Egresado e = new Egresado("Mario", "Rivera", "Angeles", "QWEQWEASD",
+		Egresado e = new Egresado("1", "Mario", "Rivera", "Angeles", "QWEQWEASD",
 				"mra_capri@msn.com", Sexo.MASCULINO, Estatus.ACTIVO);
 				
 		Assert.assertNotNull(e);
 				
+		Assert.assertTrue(e.getIdEgresado().equals("1"));
 		Assert.assertTrue(e.getNombre().equals("Mario"));
 		Assert.assertTrue(e.getApellidoPaterno().equals("Rivera"));
 		Assert.assertTrue(e.getApellidoMaterno().equals("Angeles"));

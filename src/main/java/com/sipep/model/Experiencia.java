@@ -53,6 +53,14 @@ public class Experiencia {
 	public String getLogros() {
 		return logros;
 	}
+
+	public String getIdExperiencia() {
+		return idExperiencia;
+	}
+
+	public void setIdExperiencia(String idExperiencia) {
+		this.idExperiencia = idExperiencia;
+	}
 	
 	
 

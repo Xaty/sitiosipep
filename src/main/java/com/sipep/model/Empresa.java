@@ -79,6 +79,14 @@ public class Empresa {
 	public String getDireccion() {
 		return direccion;
 	}
+
+	public String getIdEmpresa() {
+		return idEmpresa;
+	}
+
+	public void setIdEmpresa(String idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
 	
 	
 	

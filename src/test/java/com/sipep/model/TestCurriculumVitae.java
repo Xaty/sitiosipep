@@ -6,21 +6,28 @@ import org.junit.Test;
 public class TestCurriculumVitae {
 	@Test
 	public void caso1() {
-		CurriculumVitae c = new CurriculumVitae();
+		
+		Egresado egr = new Egresado("1", "juan", "perez", "perez",
+				"gaga0sga87g7asf", "jpp@hotmail.com", Sexo.MASCULINO,
+				Estatus.ACTIVO);
+		
+		CurriculumVitae c = new CurriculumVitae("1", egr);
+		
+		
 
-		Curso c1 = new Curso("Android", "UTVM", "Del 27 al 10 de Diciembre");
+		Curso c1 = new Curso("1","Android", "UTVM", "Del 27 al 10 de Diciembre");
 		c.getCursos().add(c1);
 
 		Assert.assertTrue(c.getCursos().size() > 0);
 
-		FormacionAcademica f = new FormacionAcademica("UTVM", "TIC",
+		FormacionAcademica f = new FormacionAcademica("1", "UTVM", "TIC",
 				"Telecomunicaciones");
 
 		c.getFormacionesAcademicas().add(f);
 
 		Assert.assertTrue(c.getFormacionesAcademicas().size() > 0);
 
-		Experiencia e = new Experiencia("protecsa", "5 de febrero 1020",
+		Experiencia e = new Experiencia("1", "protecsa", "5 de febrero 1020",
 				"desarrollador", "8 meses", "programar",
 				"2 proyectos terminados");
 		
@@ -28,7 +35,7 @@ public class TestCurriculumVitae {
 		
 		Assert.assertTrue(c.getExperiencias().size() > 0);
 		
-		Idioma i = new Idioma("frances", "B2");
+		Idioma i = new Idioma("1", "frances", "B2");
 		
 		c.getIdiomas().add(i);
 		
