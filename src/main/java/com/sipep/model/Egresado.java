@@ -47,9 +47,10 @@ public class Egresado {
 	/*
 	 * Recibe los valores minimos obligatorios, mas fotografia para el egresado
 	 */
-	public Egresado(String nombre, String apellidoPaterno,
+	public Egresado(String id, String nombre, String apellidoPaterno,
 			String apellidoMaterno, String curp, String correo, Sexo sexo,
-			String estatus, byte[] fotografia) {
+			Estatus estatus, byte[] fotografia) {
+		this.idEgresado = id;
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;

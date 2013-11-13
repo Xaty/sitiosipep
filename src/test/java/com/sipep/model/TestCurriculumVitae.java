@@ -27,9 +27,10 @@ public class TestCurriculumVitae {
 
 		Assert.assertTrue(c.getFormacionesAcademicas().size() > 0);
 
-		Experiencia e = new Experiencia("1", "protecsa", "5 de febrero 1020",
-				"desarrollador", "8 meses", "programar",
-				"2 proyectos terminados");
+		Experiencia e = new Experiencia("1", "PROTECSA", "Av. 5 de febrero No.1220",
+				"Desarrollador", "1 año", "programar",
+				" proyectos terminados", CurriculumVitae.this.getIdCurriculum().equals("1"));
+		
 		
 		c.getExperiencias().add(e);
 		

@@ -41,15 +41,24 @@ public class ExperienciaDaoImpl extends JdbcTemplate implements ExperienciaDao{
 
 	@Override
 	public Experiencia read(String id) {
-		String sql = "select * from egresado where id_egresado = ?";
+		String sql = "select * from experiencia where id_experiencia = ?";
 		try {
 			Experiencia resultado = this.queryForObject(sql,
 					new Object[] { id },
 					new RowMapper<Experiencia>() {
 						@Override
 						public Experiencia mapRow(ResultSet rs, int rowNum) throws SQLException {
-									return null;
-
+							Experiencia experiencia = new Experiencia(
+									rs.getString("id_experiencia"),
+									rs.getString("nombre_Empresa"), 
+									rs.getString("direccion"),
+									rs.getString("puesto"),
+									rs.getString("duracion"),
+									rs.getString("funciones"),
+									rs.getString("logros"),
+									null // TODO: Primero hacer el de CV y luego explicar
+									);
+									return experiencia;
 						}
 					});
 			return resultado;
@@ -60,20 +69,50 @@ public class ExperienciaDaoImpl extends JdbcTemplate implements ExperienciaDao{
 
 	@Override
 	public void update(Experiencia transientObject) {
-		// TODO Auto-generated method stub
-		
+		this.update(
+				"UPDATE experiencia= ?" +
+				"SET logros= ?" + 
+				"WHERE id_experiencia",
+				new Object[]{
+						transientObject.getNombreEmpresa(),
+						transientObject.getLogros()
+				}	
+			);
 	}
 
 	@Override
 	public void delete(Experiencia persistentObject) {
-		// TODO Auto-generated method stub
+		this.update(
+				"DELETE FROM experiencia " +
+				"WHERE id_experiencia = ?",
+				new Object[] {
+						persistentObject.getIdExperiencia()
+				}
+			);
 		
 	}
 
 	@Override
 	public List<Experiencia> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM egresado";
+		List<Experiencia> result = this.query(sql, new RowMapper<Experiencia>() {
+			@Override
+			public Experiencia mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Experiencia experiencia = new Experiencia(
+						rs.getString("idExperiencia"), 
+						rs.getString("nombreEmpresa"),
+						rs.getString("direccion"),
+						rs.getString("puesto"),
+						rs.getString("duracion"),
+						rs.getString("funciones"),
+						rs.getString("logros"),
+						null
+						);
+				return experiencia;
+			}
+		});
+		return result;
+
 	}
 
 	@Override
