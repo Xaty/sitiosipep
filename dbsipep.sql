@@ -3,13 +3,6 @@ create database if not exists sipep;
 
 use sipep;
 
-create table sexo(
-	sexo varchar(1) not null
-);
-
-create table estatus(
-	estatus varchar(8) not null
-);
 
 create table egresado(
 	id_egresado varchar(10) not null,
