@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,23 +51,41 @@
 
       <div class="row marketing">
         <div class="col-lg-12">
-            <form class="form-horizontal" role="form">
+            <form:form class="form-horizontal" role="form" 
+            	modelAttribute="formEgresado" 
+            	action="guardar-egresado" method="post">
                 <div class="form-group">
                       <label class="col-lg-3 control-label">Nombre:</label>
-                      <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
-                    </div>
-		  </div>
+                     <div class="col-lg-8">
+		    		  	<form:input type="text" class="form-control" path="nombre"/>
+		    		  	
+		    		  	<spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="nombre"/>
+		    		  	</spring:hasBindErrors>
+		    		  	
+		    		  	
+                	</div>
+		  		</div>
 		  <div class="form-group">
                       <label class="col-lg-3 control-label">Apellido paterno:</label>
                       <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
+		    <form:input type="text" class="form-control" path="apellidoPaterno"/>
+		    			
+		    			<spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="apellidoPaterno"/>
+		    		  	</spring:hasBindErrors>
+		    			
                       </div>
 		  </div>
 		  <div class="form-group">
                       <label class="col-lg-3 control-label">Apellido materno:</label>
                       <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
+		    <form:input type="text" class="form-control" path="apellidoMaterno"/>
+		    			
+		    			<spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="apellidoMaterno"/>
+		    		  	</spring:hasBindErrors>
+		    			
                     </div>
 		  </div>
                
@@ -73,98 +94,37 @@
                       <div class="col-lg-9">
                       <label class="col-lg-1 control-label">D&iacute;a:</label>
                       <div class="col-lg-2">
-                    <select class="form-control">
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>07</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                    </select>
+                    <form:select class="form-control" path="dia">
+                            
+                    </form:select>
                           </div>
                     <label class="col-lg-1 control-label">Mes:</label>
                     <div class="col-lg-2">
-                    <select class="form-control">
-                        <option>Enero</option>
-                        <option>Febrero</option>
-                        <option>Marzo</option>
-                        <option>Abril</option>
-                        <option>Mayo</option>
-                        <option>Junio</option>
-                        <option>Julio</option>
-                        <option>Agosto</option>
-                        <option>Septiembre</option>
-                        <option>Octubre</option>
-                        <option>Noviembre</option>
-                        <option>Diciembre</option>
-                    </select>
+                    <form:select class="form-control" path="mes">
+                 
+                    </form:select>
                     </div>
                     <label class="col-lg-1 control-label">A&ntilde;o:</label>
                     <div class="col-lg-2">
-                    <select class="form-control">
-                        <option>1980</option>
-                        <option>1981</option>
-                        <option>1982</option>
-                        <option>1983</option>
-                        <option>1984</option>
-                        <option>1985</option>
-                        <option>1986</option>
-                        <option>1987</option>
-                        <option>1988</option>
-                        <option>1989</option>
-                        <option>1990</option>
-                        <option>1991</option>
-                        <option>1992</option>
-                        <option>1993</option>
-                        <option>1994</option>
-                        <option>1995</option>
-                        <option>1996</option>
-                        <option>1997</option>
-                        <option>1998</option>
-                        <option>1999</option>
-                        <option>2000</option>
-                    </select>
+                    <form:select class="form-control" path="anio">
+                      
+                    </form:select>
                     </div>
                       </div>
 		  </div>
                    
-                  <div class="form-group">
+          <div class="form-group">
                       <label class="col-lg-3 control-label">Sexo:</label>
                       <div class="col-lg-8">
                         <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            <input type="radio" name="optionsRadios" id="masculino" value="option1" checked>
                             Masculino
                           </label>
                         </div>
                         <div class="radio">
                           <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <input type="radio" name="optionsRadios" id="femenino" value="option2"/>
                             Femenino
                           </label>
                         </div>
@@ -174,13 +134,23 @@
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Correo:</label>
                       <div class="col-lg-8">
-                    <input type="text" class="form-control" placeholder="tu@correo.com"/>
+                      
+                    <form:input type="text" class="form-control" placeholder="tu@correo.com" path="correo"/>
+		    		  	<spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="correo"/>
+		    		  	</spring:hasBindErrors>
+		    		  	                    
                       </div>
                       </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Clave:</label>
                     <div class="col-lg-8">
-                        <input type="password" class="form-control"/>
+                        <form:input type="password" class="form-control" path="clave"/>
+                        
+                        <spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="clave"/>
+		    		  	</spring:hasBindErrors>
+                        
                     </div>
                     </div>
                 
@@ -194,6 +164,11 @@
                     <div class="checkbox">
                         <input type="checkbox"/>
                         <a href="" target="blank">Ac&eacute;pto Terminos y Condiciones</a>
+                    
+                    <spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="clave"/>
+		    		  	</spring:hasBindErrors>
+                    
                     </div>
                 </div>
                 
@@ -201,7 +176,7 @@
                         <input class="btn btn-default" type="submit" value="Crear">
                         <input class="btn btn-default" type="submit" value="Cancelar">
                     </div>
-		</form>
+		</form:form>
 
 
         </div>

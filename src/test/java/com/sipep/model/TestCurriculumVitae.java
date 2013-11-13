@@ -15,7 +15,7 @@ public class TestCurriculumVitae {
 		
 		
 
-		Curso c1 = new Curso("1","Android", "UTVM", "Del 27 al 10 de Diciembre");
+		Curso c1 = new Curso("1","Android", "UTVM", "Del 27 al 10 de Diciembre", c);
 		c.getCursos().add(c1);
 
 		Assert.assertTrue(c.getCursos().size() > 0);
