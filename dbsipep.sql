@@ -19,18 +19,6 @@ create table egresado(
 	fotografia longblob
 );
 
-create table formacion_academica(
-	id_formacion int primary key,
-	nombre_institucion varchar(30) not null,
-	carrera varchar(20) not null,
-	especialidad varchar(20)
-);
-
-create table idioma(
-	id_idioma int primary key,
-	idioma varchar(10) not null,
-	nivel varchar(10) not null
-);
 
 create table empresa(
 	id_empresa int primary key,
@@ -70,7 +58,9 @@ create table curriculum(
 	id_idioma int not null,
 	primary key (id_curriculum),
 	foreign key (id_formacion) references formacion_academica(id_formacion),
-	foreign key (id_idioma) references idioma(id_idioma)
+	foreign key (id_experiencia) references experiencia(id_experiencia),
+	foreign key (id_idioma) references idioma(id_idioma),
+	foreign key (id_curso) references curso(id_curso)
 );
 
 create table experiencia(
@@ -95,5 +85,18 @@ create table curso(
 );
 
 
+create table formacion_academica(
+	id_formacion int primary key,
+	nombre_institucion varchar(30) not null,
+	carrera varchar(20) not null,
+	especialidad varchar(20),
+	foreign key (id_curriculum) references curriculum(id_curriculum)
+);
 
+create table idioma(
+	id_idioma int primary key,
+	idioma varchar(10) not null,
+	nivel varchar(10) not null,
+	foreign key (id_curriculum) references curriculum(id_curriculum)
+);
 
