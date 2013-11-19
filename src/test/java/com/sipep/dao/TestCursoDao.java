@@ -17,7 +17,7 @@ import com.sipep.model.Estatus;
 import com.sipep.model.Sexo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("AppCtx-Spring_Test.xml")
+@ContextConfiguration("/AppCtx-Spring-Test.xml")
 
 public class TestCursoDao {
 	protected final Log log = LogFactory.getLog(this.getClass());

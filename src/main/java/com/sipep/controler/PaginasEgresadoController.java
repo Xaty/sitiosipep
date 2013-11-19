@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,12 +18,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sipep.controler.form.FormEgresado;
+import com.sipep.model.Egresado;
+import com.sipep.service.EgresadoService;
 
 @Controller
 @RequestMapping("/egresado")
 public class PaginasEgresadoController {
 	
 	private final Log log = LogFactory.getLog(getClass());
+	
+	@Autowired
+	private EgresadoService service;
 	
 	@RequestMapping(value = "/competencias-profesionales", method = RequestMethod.GET)
 	public ModelAndView paginaCompetenciasProfesionales(
@@ -93,8 +99,32 @@ public class PaginasEgresadoController {
 	@RequestMapping(value = "/registro", method = RequestMethod.GET)
 	public ModelAndView paginaRegistro(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		int dias[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+				11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+				21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+				31 };
+		
+		String meses [] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo",
+				"Junio", "Julio", "Agosto", "Septiembre", "Octubre",
+				"Noviembre", "Diciembre" };
+
+		String anios[] = {"1980", "1981", "1982", "1983", "1984", "1985",
+				"1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993",
+				"1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001",
+				"2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
+				"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017",
+				"2018", "2019", "2020" };
+		
 		ModelAndView model = new ModelAndView("egresado/registro");
+		
+		// se envian a la vista
+		model.addObject("dias", dias);				 
+		//model.addObject("meses", meses);
+		//model.addObject("anios", anios);
+		
 		model.addObject("formEgresado", new FormEgresado());
+		
 		return model;
 	}
 
@@ -109,6 +139,13 @@ public class PaginasEgresadoController {
 		
 		if(result.hasErrors()){
 			model.addObject(result);
+		}else{
+			//formEgresado.getDia();
+			//formEgresado.getMes();
+			//formEgresado.getAnio();
+			//Egresado e = new Egresado(id, nombre, apellidoPaterno, apellidoMaterno, curp, correo, sexo, estatus)
+			//service.registrarEgresado(e);
+			
 		}
 		
 		log.debug(valores);

@@ -29,7 +29,7 @@ public class TestCurriculumVitae {
 
 		Experiencia e = new Experiencia("1", "PROTECSA", "Av. 5 de febrero No.1220",
 				"Desarrollador", "1 año", "programar",
-				" proyectos terminados", CurriculumVitae.this.getIdCurriculum().equals("1"));
+				" proyectos terminados", c);
 		
 		
 		c.getExperiencias().add(e);

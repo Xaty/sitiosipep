@@ -93,21 +93,22 @@
                       <label class="col-lg-3 control-label">Fecha de nacimiento:</label>
                       <div class="col-lg-9">
                       <label class="col-lg-1 control-label">D&iacute;a:</label>
-                      <div class="col-lg-2">
+                      <div class="col-lg-2">                      
+                      
                     <form:select class="form-control" path="dia">
-                            
+                            <form:options items="${dias}"></form:options>
                     </form:select>
                           </div>
                     <label class="col-lg-1 control-label">Mes:</label>
                     <div class="col-lg-2">
                     <form:select class="form-control" path="mes">
-                 
+                 		<form:options items="${meses}"></form:options>
                     </form:select>
                     </div>
                     <label class="col-lg-1 control-label">A&ntilde;o:</label>
                     <div class="col-lg-2">
                     <form:select class="form-control" path="anio">
-                      
+                      <form:options items="${anio}"></form:options>
                     </form:select>
                     </div>
                       </div>

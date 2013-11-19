@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
@@ -20,6 +22,13 @@ import com.sipep.model.Sexo;
 @Repository
 public class ExperienciaDaoImpl extends JdbcTemplate implements ExperienciaDao{
 
+	@Autowired
+	@Override
+	public void setDataSource(DataSource dataSource) {
+		// TODO Auto-generated method stub
+		super.setDataSource(dataSource);
+	}
+	
 	@Override
 	public void create(Experiencia newInstance) {
 		this.update(
