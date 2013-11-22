@@ -33,6 +33,7 @@ public class TestCursoDao {
 				Estatus.ACTIVO);
 		CurriculumVitae cv = new CurriculumVitae("1", eg);
 		
+		
 		Curso c = new Curso("1", "java", "UTVM", "Mayo-Agosto 2013", cv);
 		
 		cursoDao.create(c);
