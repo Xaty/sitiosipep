@@ -120,9 +120,3 @@ values ('0001','desa','utvm','abril-mayo','01');
 
 insert into idioma
 values ('012','frances','basic','01');
-
-select * from curriculum where id_egresado="1234";
-
-delete from usuario where id_usuario = "001";
-
-select * from egresado;
