@@ -1,6 +1,9 @@
 package com.sipep.controler.form;
 
+import javax.validation.constraints.Max;
+
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class FormEgresado {
@@ -13,7 +16,10 @@ public class FormEgresado {
 	private String apellidoMaterno;
 	private int dia;
 	private int mes;
-	private int anio;	
+	private int anio;
+	@Length(max=18)
+	@NotBlank
+	private String curp;
 	
 	@Email
 	@NotBlank
@@ -92,5 +98,13 @@ public class FormEgresado {
 
 	public void setClave(String clave) {
 		this.clave = clave;
+	}
+
+	public String getCurp() {
+		return curp;
+	}
+
+	public void setCurp(String curp) {
+		this.curp = curp;
 	}
 }

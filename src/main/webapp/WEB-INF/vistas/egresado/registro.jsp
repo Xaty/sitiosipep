@@ -108,7 +108,7 @@
                     <label class="col-lg-1 control-label">A&ntilde;o:</label>
                     <div class="col-lg-2">
                     <form:select class="form-control" path="anio">
-                      <form:options items="${anio}"></form:options>
+                      <form:options items="${anios}"></form:options>
                     </form:select>
                     </div>
                       </div>
@@ -116,20 +116,30 @@
                    
           <div class="form-group">
                       <label class="col-lg-3 control-label">Sexo:</label>
-                      <div class="col-lg-8">
-                        <div class="radio">
+                      <div class="col-lg-8">                        	
+                           	
+                        <div>
                           <label>
-                            <input type="radio" name="optionsRadios" id="masculino" value="option1" checked>
-                            Masculino
+                            <form:radiobutton path="sexo" value="F"/>Femenino
                           </label>
                         </div>
-                        <div class="radio">
+                        <div>
                           <label>
-                            <input type="radio" name="optionsRadios" id="femenino" value="option2"/>
-                            Femenino
+                            <form:radiobutton path="sexo" value="M"/>Masculino
                           </label>
-                        </div>
+                       </div>
                       </div>
+		  </div>
+		  
+		  <div class="form-group">
+		  		<label class="col-lg-3 control-label">CURP:</label>
+		  		<div class="col-lg-8">
+		  			<form:input type="text" class="form-control" placeholder="debe contener 18 caracteres" path="curp"/>
+		  			
+		  			<spring:hasBindErrors name="formEgresado">
+		    		  		<form:errors path="curp"/>
+		    		  	</spring:hasBindErrors>
+		  		</div>
 		  </div>
                     
                   <div class="form-group">
