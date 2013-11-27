@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,13 +61,16 @@
         <div class="col-lg-12">
 		<!-- formulario -->
 		
-				<form class="form-horizontal"role="form">
+				<form:form class="form-horizontal" modelAttribute="formIdioma" action="idiomas" role="form">
 				
 				  <div class="form-group">
 					
 						<label class="col-lg-3 control-label">Idioma:</label>
 						<div class="col-lg-8">
-						<input type="email" class="form-control" id="exampleInputIdio">
+						<form:input type="text" class="form-control" path="idioma"/>
+							<spring:hasBindErrors name="formIdioma">
+								<form:errors path="idioma"/>
+							</spring:hasBindErrors>
 						</div>	
 				  </div>
 				  <BR>
@@ -73,11 +79,9 @@
 						<label class="col-lg-3 control-label">Nivel:</label>
 					
 					<div class="col-lg-8" >
-						<select class="form-control"><option>Ninguno</option>
-							<option>Básico</option>
-							<option>Intermedio</option>
-							<option>Avanzado</option>
-						</select>
+						<form:select class="form-control" path="nivel">
+							<form:options items="${nivel}"></form:options>
+						</form:select>
 					</div>
 					
 					
@@ -91,7 +95,7 @@
 				  <button type="submit" class="btn btn-default" >Guardar</button>
 				  <button type="submit" class="btn btn-default">Cancelar</button>
 				</div>
-				</form>
+				</form:form>
 				
 
         </div>

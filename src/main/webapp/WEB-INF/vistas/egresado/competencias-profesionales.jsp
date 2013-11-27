@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,12 +60,12 @@
       <div class="row marketing">
         <div class="col-lg-12">
 		<!-- formulario -->
-						<form class="form-horizontal" role="form">
+						<form:form class="form-horizontal" modelAttribute="formCurriculumVitae" action="competencias-profesionales" role="form">
 				  <div class="form-group">
 
 						<label class="col-lg-3 control-label">Describe tus Habilidades:</label>
                                                 					<div class="col-lg-8">
-						<textarea class="form-control" rows="3"></textarea>
+						<form:textarea class="form-control" rows="3" path="habilidades"></form:textarea>
 					</div>	
 				  </div>
 					
@@ -72,7 +75,7 @@
 				  <button type="submit" class="btn btn-default">Guardar</button>
 				  <button type="submit" class="btn btn-default">Cancelar</button>
                                                     </div>
-				</form>
+				</form:form>
 
         </div>
       </div>

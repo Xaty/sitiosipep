@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,47 +60,65 @@
 	  
         <div class="col-lg-12">		
 		
-		<form  class="form-horizontal" role="form">
+		<form:form  class="form-horizontal" modelAttribute="formExperiencia" action="experiencia" role="form" method="post">
 		  
 		  <div class="form-group">
 		   	<label class="col-lg-3 control-label">Periodo Laboral:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtPeriodoLaoral"placeholder="Ejemplo: 1990-2003">
+					<form:input type="text" class="form-control" id="txtPeriodoLaoral" placeholder="Ejemplo: 1990-2003" path="periodo"/>
+						<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="periodo"/>
+						</spring:hasBindErrors>
 			 </div>	
 		  </div>
 		  
 		<div class="form-group">
 			<label class="col-lg-3 control-label">Nombre de la Empresa:</label>
 				<div class="col-lg-8">
-					<input type="txt"  class="form-control" id="txtNomEpresa">
+					<form:input type="text" class="form-control" id="txtNomEpresa" path="nombre"/>
+						<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="nombre"/>
+						</spring:hasBindErrors>
 				</div>
 		</div>
 		 
 		<div class="form-group">
 		  	<label class="col-lg-3 control-label">Dirección:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtDirEmpresa">
+					<form:input type="text" class="form-control" id="txtDirEmpresa" path="direccion"/>
+						<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="direccion"/>
+						</spring:hasBindErrors>
 				</div>
 		</div>
 		  
 		  <div class="form-group">
 		  	<label class="col-lg-3 control-label">Puesto Desempeñado:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtPuestDese">
+					<form:input type="text" class="form-control" id="txtPuestDese" path="puesto"/>
+						<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="puesto"/>
+						</spring:hasBindErrors>
 				</div>
 		  </div>
 		  
 		  <div class="form-group">
 			<label class="col-lg-3 control-label">Funciones:</label>
 				<div class="col-lg-8" >
-					<textarea type="txt" class="form-control" id="txtFun" rows=4></textarea>
+					<form:textarea class="form-control" id="txtFun" rows="4" path="funciones"></form:textarea>
+						<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="funciones"/>
+						</spring:hasBindErrors>
 				</div>  
 		 </div>
 		  
 		 <div class="form-group">			
 				<label class="col-lg-3 control-label">Logros:</label>
 					<div class="col-lg-8">
-						<textarea class="form-control" id="txtLogros" rows=4></textarea>
+						<form:textarea class="form-control" id="txtLogros" rows="4" path="logros"/>
+							<spring:hasBindErrors name="formExperiencia">
+							<form:errors path="logros"/>
+						</spring:hasBindErrors>
 					</div>
 		  </div>
 		
@@ -110,7 +131,7 @@
 			
 		  </div>
 			  
-		</form>
+		</form:form>
 
 
         </div>

@@ -14,12 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/administrador")
 public class PaginasAdministradorController {
-	@RequestMapping(value = "/alta-empresa", method = RequestMethod.GET)
-	public ModelAndView paginaAltaEmpresa(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("administrador/alta-empresa");
-		return model;
-	}
+
 	
 	@RequestMapping(value = "/asignar-oferta", method = RequestMethod.GET)
 	public ModelAndView paginaAsignarOferta(HttpServletRequest request,
