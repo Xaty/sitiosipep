@@ -24,6 +24,7 @@ import com.sipep.controler.form.FormEgresado;
 import com.sipep.controler.form.FormExperiencia;
 import com.sipep.controler.form.FormFormacion;
 import com.sipep.controler.form.FormIdioma;
+import com.sipep.controler.form.FormPerfil;
 import com.sipep.model.Egresado;
 import com.sipep.model.Estatus;
 import com.sipep.model.Sexo;
@@ -95,8 +96,8 @@ public class PaginasEgresadoController {
 		}
 		else{
 			//TODO: almacenar cursos
+			log.debug(val);
 		}
-		log.debug(val);
 		return model;
 	}
 
@@ -120,8 +121,9 @@ public class PaginasEgresadoController {
 			model.addObject(result);
 		}else{
 			// TODO: almacenar experiencia
+			log.debug(val);
 		}
-		log.debug(val);
+		
 		return model;
 	}
 
@@ -143,7 +145,11 @@ public class PaginasEgresadoController {
 		
 		String val = ToStringBuilder.reflectionToString(formFormacion);
 		
-		log.debug(val);
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
 		return model;
 	}
 
@@ -168,7 +174,11 @@ public class PaginasEgresadoController {
 		
 		String val = ToStringBuilder.reflectionToString(formIdioma);
 		
-		log.debug(val);
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
 		return model;
 	}
 
@@ -190,6 +200,26 @@ public class PaginasEgresadoController {
 	public ModelAndView paginaPerfil(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/perfil");
+		model.addObject("formPerfil", new FormPerfil());
+		return model;
+	}
+	
+	// Guardar perfil
+	@RequestMapping(value = "/perfil", method = RequestMethod.POST)
+	public ModelAndView guardarPerfil(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formPerfil") FormPerfil formPerfil,
+			BindingResult result) throws ServletException, IOException{
+		ModelAndView model = new ModelAndView("egresado/perfil");
+		
+		String val = ToStringBuilder.reflectionToString(formPerfil);
+		
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
+		
 		return model;
 	}
 

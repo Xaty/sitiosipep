@@ -53,7 +53,7 @@
 				forma la informaci&oacuten a las empresas vinculadas
 				para apoyarte a obtener tu primer empleo
 			</p>
-			<p><a class="btn btn-lg btn-success" href="C:\Users\LUIS\Desktop\sipep\registro.html">Registrate!</a></p>
+			<p><a class="btn btn-lg btn-success" href="../egresado/registro">Registrate!</a></p>
 		      </div>
 		</div>
 		<div class="col-lg-4">
@@ -96,13 +96,13 @@
 			<span class="glyphicon glyphicon-user"></span>
 			Tips de presentaci&oacuten
 		</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. <a href="C:\Users\LUIS\Desktop\sipep\tips.html">Ver m&aacute;s</a></p>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. <a href="tips">Ver m&aacute;s</a></p>
 
           	<h4>
 			<span class="glyphicon glyphicon-briefcase"></span>
 			Vinculacion empresarial
 		</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. <a href="C:\Users\LUIS\Desktop\sipep\listaEmpresas.html">Ver m&aacute;s</a></p>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. <a href="../egresado/lista-empresas">Ver m&aacute;s</a></p>
         </div>
 
         <div class="col-lg-4">

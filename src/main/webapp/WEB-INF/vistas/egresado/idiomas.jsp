@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+	<link href="${pageContext.request.contextPath}/recursos-web/bootstrap/css/bootstrap.theme.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/recursos-web/css/jumbotron-narrow.css" rel="stylesheet">
 
@@ -51,7 +51,7 @@
 
         </ul>
 	<img src="img/sipep.png"/>
-        <span class="text-muted titulo">Digitalizaci&oacuten de CV</span>
+        <span class="text-muted titulo">Digitalizaci&oacute;n de CV</span>
       </div>
 
       <!-- titulo de formulario -->

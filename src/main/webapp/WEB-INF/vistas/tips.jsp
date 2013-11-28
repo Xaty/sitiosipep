@@ -32,7 +32,7 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="C:\Users\LUIS\Desktop\sipep\index.html">Home</a></li>
+          <li class="active"><a href="index">Home</a></li>
 
           <!--li><a href="#">Notificaciones</a></li>
           <li><a href="#">Perfil</a></li>

@@ -17,7 +17,7 @@ public class FormEgresado {
 	private int anio;
 	
 	// TODO: definir maximo de caracteres de CURP y que no acepte ceros
-	@Length(max=18)
+	@Length(min=16, max=18)
 	@NotBlank
 	private String curp;
 	
