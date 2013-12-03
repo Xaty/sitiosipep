@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,24 +60,35 @@
       <div class="row marketing">
         <div class="col-lg-12">
 		<!-- formulario -->
-						<form class="form-horizontal"role="form">
+						<form:form class="form-horizontal" modelAttribute="formCurso" action="cursos" role="form">
 							<div class="form-group">
 								 <label class="col-lg-3 control-label" >Periodo del curso:</label>
 								  <div class="col-lg-8">
-								  <input type="email" class="form-control" id="exampleAñoI" placeholder="Ejemplo: 2009 - 2012" >
+								  <form:input type="text" class="form-control" id="exampleAñoI" placeholder="Ejemplo: 2009 - 2012" path="periodo"/>
+								  
+								  <spring:hasBindErrors name="formCurso">
+								  		<form:errors path="periodo"/>
+								  </spring:hasBindErrors>
+								  
 								  </div>
 							</div>
 					<div class="form-group">
 								 <label class="col-lg-3 control-label" >Institucion:</label>
 								  <div class="col-lg-8">		
 										
-											<input type="email" class="form-control" id="exampleInputEmail1">
+											<form:input type="text" class="form-control" id="institusion" path="institucion"/>
+											<spring:hasBindErrors name="formCurso">
+								  				<form:errors path="institucion"/>
+								  			</spring:hasBindErrors>
 									</div>
 				  </div>
 							<div class="form-group">
 								<label class="col-lg-3 control-label" >Nombre de Capacitación:</label>
 							<div class="col-lg-8">
-								<input type="password" class="form-control" id="exampleInputPassword1">
+								<form:input type="text" class="form-control" id="exampleInputPassword1" path="capacitacion"/>
+									<spring:hasBindErrors name="formCurso">
+								  		<form:errors path="capacitacion"/>
+								  </spring:hasBindErrors>
 							</div>
 							</div>
                                                     <div>
@@ -86,7 +100,7 @@
 					  <button type="submit" class="btn btn-default">Guardar</button>
 					  <button type="submit" class="btn btn-default">Cancelar</button>
 				  </div>
-				</form>
+				</form:form>
 
         </div>
       </div>

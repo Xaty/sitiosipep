@@ -19,6 +19,9 @@
     <link href="${pageContext.request.contextPath}/recursos-web/css/jumbotron-narrow.css" rel="stylesheet">
 
     <link href="${pageContext.request.contextPath}/recursos-web/css/main.css" rel="stylesheet">
+    
+    <link href="${pageContext.request.contextPath}/">
+    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,15 +38,15 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="C:\Users\LUIS\Desktop\sipep\index.html">Home</a></li>
+          <li class="active"><a href="../public/index">Home</a></li>
 
           <!--li><a href="#">Notificaciones</a></li>
           <li><a href="#">Perfil</a></li>
           <li><a href="#">Curriculum</a></li-->
 
         </ul>
-	<img src="img/sipep.png"/>
-        <span class="text-muted titulo">Digitalizaci&oacuten de CV</span>
+	<img src="../img/sipep"/>
+        <span class="text-muted titulo">Digitalizaci&oacute;n de CV</span>
       </div>
 
       <!-- titulo de formulario -->

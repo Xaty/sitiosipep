@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,7 +35,7 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="C:\Users\LUIS\Desktop\sipep\index.html">Home</a></li>
+          <li class="active"><a href="/sipep">Home</a></li>
 
           <li><a href="C:\Users\LUIS\Desktop\sipep\listaempresas.html">Notificaciones</a></li>
           <li><a href="C:\Users\LUIS\Desktop\sipep\perfil.html">Perfil</a></li>
@@ -47,7 +50,7 @@
           </li>
 
         </ul>
-	<img src="img/sipep.png"/>
+	<img src="sipep.png"/>
         <span class="text-muted titulo">Digitalizaci&oacuten de CV</span>
       </div>
 
@@ -56,90 +59,63 @@
 
       <div class="row marketing">
         <div class="col-lg-12">
-		<form class="form-horizontal" role="form">
-		  <div class="form-group">
-		    <label class="col-lg-3 control-label">Nombre:</label>
-                    <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
-                    </div>
-		  </div>
-                    
-		  <div class="form-group">
-		    <label class="col-lg-3 control-label">Apellido paterno:</label>
-                    <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
-                    </div>
-		  </div>
-                    
-		  <div class="form-group">
-                      <label class="col-lg-3 control-label">Apellido materno:</label>
-                      <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
-                    </div>
-		  </div>
-                    
-                   <div class="form-group">
-		    <label class="col-lg-3 control-label">Correo:</label>
-                    <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
-                    </div>
-		  </div>
-                    
-                  <div class="form-group">
-		    <label class="col-lg-3 control-label">Fecha de nacimiento:</label>
-                    <div class="col-lg-8">
-                    <input type="text" class="form-control" placeholder="DD-MM-AAAA"/>
-                    </div>
-		  </div>
+		<form:form class="form-horizontal" modelAttribute="formPerfil" action="perfil" role="form" method="post">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Direcci&oacute;n</label>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Calle:</label>
                         <div class="col-lg-8">
-                        <input type="text" class="form-control"/>
+                        <form:input type="text" class="form-control" path="calle"/>
+                        <spring:hasBindErrors name="formPerfil">
+                        	<form:errors path="calle"/>
+                        </spring:hasBindErrors>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Colonia:</label>
                         <div class="col-lg-8">
-                        <input type="text" class="form-control"/>
+                        <form:input type="text" class="form-control" path="colonia"/>
+                        <spring:hasBindErrors name="formPerfil">
+                        	<form:errors path="colonia"/>
+                        </spring:hasBindErrors>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Municipio o comunidad:</label>
                         <div class="col-lg-8">
-                        <input type="text" class="form-control"/>
+                        <form:input type="text" class="form-control" path="municipio"/>
+                        <spring:hasBindErrors name="formPerfil">
+                        	<form:errors path="municipio"/>
+                        </spring:hasBindErrors>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Estado:</label>
                         <div class="col-lg-8">
-                        <input type="text" class="form-control"/>
+                        <form:input type="text" class="form-control" path="estado"/>
+                        <spring:hasBindErrors name="formPerfil">
+                        	<form:errors path="estado"/>
+                        </spring:hasBindErrors>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-3 control-label">C.P.:</label>
                         <div class="col-lg-8">
-                        <input type="text" class="form-control"/>
+                        <form:input type="text" class="form-control" path="cp"/>
+                        <spring:hasBindErrors name="formPerfil">
+                        	<form:errors path="cp"/>
+                        </spring:hasBindErrors>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Status:</label>
-                        <div class="col-lg-8">
-                        <select class="form-control">
-                            <option>Activo</option>
-                            <option>Inactivo</option>
-                        </select>
-                        </div>
-                    </div>
+                    
                     <div align="center">
                         <br>
                         <input class="btn btn-default" type="submit" value="Actualizar">
                         <input class="btn btn-default" type="submit" value="Cancelar">
                     </div>
 		  
-		</form>
+		</form:form>
 
 
         </div>

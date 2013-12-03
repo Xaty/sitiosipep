@@ -1,7 +1,5 @@
 package com.sipep.controler.form;
 
-import javax.validation.constraints.Max;
-
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -17,7 +15,9 @@ public class FormEgresado {
 	private int dia;
 	private int mes;
 	private int anio;
-	@Length(max=18)
+	
+	// TODO: definir maximo de caracteres de CURP y que no acepte ceros
+	@Length(min=16, max=18)
 	@NotBlank
 	private String curp;
 	

@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,33 +51,53 @@
 
       <div class="row marketing">
         <div class="col-lg-12">
-            <form class="form-horizontal" role="form">
+            <form:form class="form-horizontal" modelAttribute="formOferta" action="subir-oferta" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-                      <input type="text" class="form-control" placeholder="nombre de la oferta"/>
+                      <form:input type="text" class="form-control" placeholder="nombre de la oferta" path="nombreOferta"/>
+                      <spring:hasBindErrors name="formOferta">
+                      		<form:errors path="nombreOferta"/>
+                      </spring:hasBindErrors>
                     </div>
                </div>
                     
 		<div class="form-group">
                       <label class="col-lg-3 control-label">Nombre de la empresa:</label>
                       <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
+		    		<form:input type="text" class="form-control" path="nombreEmpresa"/>
+		    		<spring:hasBindErrors name="formOferta">
+                      		<form:errors path="nombreEmpresa"/>
+                      </spring:hasBindErrors>
                     </div>
 		  </div>
                     
 		  <div class="form-group">
                       <label class="col-lg-3 control-label">Informaci&oacute;n de la oferta:</label>
                       <div class="col-lg-8">
-                      <textarea class="form-control" rows="3"></textarea>
+                      <form:textarea class="form-control" rows="3" path="informacion"></form:textarea>
+                      <spring:hasBindErrors name="formOferta">
+                      		<form:errors path="informacion"/>
+                      </spring:hasBindErrors>
                       </div>
 		  </div>
                     
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Requisitos a cubrir:</label>
                       <div class="col-lg-8">
-                    <textarea class="form-control" rows="3"></textarea>
+                    <form:textarea class="form-control" rows="3" path="requisitos"></form:textarea>
+                    <spring:hasBindErrors name="formOferta">
+                      		<form:errors path="requisitos"/>
+                      </spring:hasBindErrors>
                     </div>
+		  </div>
+		  <div class="form-group">
+		  		<label class="col-lg-3 control-label">&Aacute;rea</label>
+		  		<div class="col-lg-8">
+		  			<form:select class="form-control" path="area">
+		  				<form:options items="${area}"></form:options>
+		  			</form:select>
+		  		</div>
 		  </div>
 
                     <div class="form-group">
@@ -82,82 +105,31 @@
                         <div class="col-lg-9">
                             <label class="col-lg-1 control-label">D&iacute;a</label>
                             <div class="col-lg-2">
-                    <select class="form-control">
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
-                            <option>07</option>
-                            <option>08</option>
-                            <option>09</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                            <option>21</option>
-                            <option>22</option>
-                            <option>23</option>
-                            <option>24</option>
-                            <option>25</option>
-                            <option>26</option>
-                            <option>27</option>
-                            <option>28</option>
-                            <option>29</option>
-                            <option>30</option>
-                            <option>31</option>
-                    </select>
+                    <form:select class="form-control" path="dia">
+                            <form:options items="${dia}"></form:options>
+                    </form:select>
                             </div>
                             <label class="col-lg-1 control-label">Mes</label>
                             <div class="col-lg-2">
-                    <select class="form-control">
-                        <option>Enero</option>
-                        <option>Febrero</option>
-                        <option>Marzo</option>
-                        <option>Abril</option>
-                        <option>Mayo</option>
-                        <option>Junio</option>
-                        <option>Julio</option>
-                        <option>Agosto</option>
-                        <option>Septiembre</option>
-                        <option>Octubre</option>
-                        <option>Noviembre</option>
-                        <option>Diciembre</option>
-                    </select>
+                    <form:select class="form-control" path="mes">
+                        <form:options items="${mes}"></form:options>
+                    </form:select>
                             </div>
                             <label class="col-lg-1 control-label">A&ntilde;o:</label>
                             <div class="col-lg-2">
-                    <select class="form-control">
-                        <option>2010</option>
-                        <option>2011</option>
-                        <option>2012</option>
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
-                        <option>2018</option>
-                        <option>2019</option>
-                        <option>2020</option>
-                    </select>
+                    <form:select class="form-control" path="anio">
+                        <form:options items="${anio}"></form:options>
+                    </form:select>
                             </div>
                     </div>
 		  </div>
                     
                     <div align="center">
                         <br>
-                        <input type="button" class="btn btn-default" value="Guardar"/>
-                        <input type="button" class="btn btn-default" value="Cancelar"/>
+                        <input type="submit" class="btn btn-default" value="Guardar"/>
+                        <input type="submit" class="btn btn-default" value="Cancelar"/>
                     </div>
-		</form>
+		</form:form>
 
 
         </div>

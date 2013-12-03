@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,55 +51,70 @@
 
       <div class="row marketing">
         <div class="col-lg-12">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
+            <form:form class="form-horizontal" role="form" modelAttribute="formEmpresa" action="alta-empresa" method="post">
+           <div class="form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-8">
-		    <input type="text" class="form-control"/>
+		    				<form:input type="text" class="form-control" path="nombre"/>
+		    					<spring:hasBindErrors name="formEmpresa">
+		    		  				<form:errors path="nombre"/>
+		    		  			</spring:hasBindErrors>
                     </div>
 		  </div>
                     
 		  <div class="form-group">
                       <label class="col-lg-3 control-label">Giro:</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control"/>
+                            <form:input type="text" class="form-control" path="giro"/>
+                            	<spring:hasBindErrors name="formEmpresa">
+		    		  				<form:errors path="giro"/>
+		    		  			</spring:hasBindErrors>
                         </div>
 		  </div>
                     
                 <div class="form-group">
                       <label class="col-lg-3 control-label">Clasificaci&oacute;n:</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control"/>
+                            <form:input type="text" class="form-control" path="clasificacion"/>
                         </div>
                   </div>
                     
 		  <div class="form-group">
                       <label class="col-lg-3 control-label">Direcci&oacute;n:</label>
                         <div class="col-lg-8">
-                            <input type="text" class="form-control"/>
+                            <form:input type="text" class="form-control" path="direccion"/>
+                            	<spring:hasBindErrors name="formEmpresa">
+		    		  				<form:errors path="direccion"/>
+		    		  			</spring:hasBindErrors>
                         </div>
 		  </div>
                     
                   <div class="form-group">
                       <label class="col-lg-3 control-label">Correo:</label>
                       <div class="col-lg-8">
-                            <input type="text" class="form-control" placeholder="tu@correo.com"/>
+                            <form:input type="text" class="form-control" placeholder="empresa@correo.com" path="correo"/>
+                            	<spring:hasBindErrors name="formEmpresa">
+		    		  				<form:errors path="correo"/>
+		    		  			</spring:hasBindErrors>
                       </div>
 		  </div>
                     
                     <div class="form-group">
                         <label class="col-lg-3 control-label" for="exampleInputPassword1">URL:</label>
                         <div class="col-lg-8">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="www.mipagina.com">
+                            <form:input type="text" class="form-control" placeholder="http://www.empresa.com" path="url"/>
+                            	<spring:hasBindErrors name="formEmpresa">
+		    		  				<form:errors path="url"/>
+		    		  			</spring:hasBindErrors>
                         </div>
                     </div>
                     
                     <div align="center">
                         <br>
-                        <input type="button" class="btn btn-default" value="Guardar"/>
-                        <input type="button" class="btn btn-default" value="Cancelar"/>
+                        <input type="submit" class="btn btn-default" value="Guardar"/>
+                        <input type="submit" class="btn btn-default" value="Cancelar"/>
                     </div>
-		</form>
+		</form:form>
 
 
         </div>

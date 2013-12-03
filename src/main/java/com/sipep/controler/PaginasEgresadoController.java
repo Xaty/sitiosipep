@@ -18,7 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sipep.controler.form.FormCurriculumVitae;
+import com.sipep.controler.form.FormCurso;
 import com.sipep.controler.form.FormEgresado;
+import com.sipep.controler.form.FormExperiencia;
+import com.sipep.controler.form.FormFormacion;
+import com.sipep.controler.form.FormIdioma;
+import com.sipep.controler.form.FormPerfil;
 import com.sipep.model.Egresado;
 import com.sipep.model.Estatus;
 import com.sipep.model.Sexo;
@@ -39,6 +45,24 @@ public class PaginasEgresadoController {
 			HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/competencias-profesionales");
+		model.addObject("formCurriculumVitae", new FormCurriculumVitae());
+		return model;
+	}
+	
+	//Guardar competencias profesionales
+	@RequestMapping(value = "/competencias-profesionales", method = RequestMethod.POST)
+	public ModelAndView guardarCompetencia(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formCurriculumVitae") FormCurriculumVitae formCurriculumVitae,
+			BindingResult result) throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("egresado/competencias-profesionales");
+		
+		String v = ToStringBuilder.reflectionToString(formCurriculumVitae);
+		log.debug(v);
+		
+		System.out.print(formCurriculumVitae);
+		// TODO: almacenar habilidades
+		
 		return model;
 	}
 
@@ -53,6 +77,27 @@ public class PaginasEgresadoController {
 	public ModelAndView paginaCursos(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/cursos");
+		model.addObject("formCurso", new FormCurso());
+		return model;
+	}
+	
+	//guardar curso
+	@RequestMapping(value = "/cursos", method = RequestMethod.POST)
+	public ModelAndView guardarCursos(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formCurso") FormCurso formCurso,
+			BindingResult result) throws ServletException, IOException{
+		ModelAndView model = new ModelAndView("egresado/cursos");
+
+		String val = ToStringBuilder.reflectionToString(formCurso);
+		
+		if(result.hasErrors()){
+			model.addObject(result);
+		}
+		else{
+			//TODO: almacenar cursos
+			log.debug(val);
+		}
 		return model;
 	}
 
@@ -60,6 +105,25 @@ public class PaginasEgresadoController {
 	public ModelAndView paginaExperiencia(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/experiencia");
+		model.addObject("formExperiencia", new FormExperiencia());
+		return model;
+	}
+	
+	@RequestMapping(value = "/experiencia", method = RequestMethod.POST)
+	public ModelAndView guardarExperiencia(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formExperiencia") FormExperiencia formExperiencia,
+			BindingResult result) throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("egresado/experiencia");
+		
+		String val = ToStringBuilder.reflectionToString(formExperiencia);
+		if(result.hasErrors()){
+			model.addObject(result);
+		}else{
+			// TODO: almacenar experiencia
+			log.debug(val);
+		}
+		
 		return model;
 	}
 
@@ -67,13 +131,54 @@ public class PaginasEgresadoController {
 	public ModelAndView paginaFormacion(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/formacion");
+		model.addObject("formFormacion", new FormFormacion());
+		return model;
+	}
+	
+	//guardar datos
+	@RequestMapping(value = "/formacion", method = RequestMethod.POST)
+	public ModelAndView guardarFormacion(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formFormacion") FormFormacion formFormacion,
+			BindingResult result) throws ServletException, IOException{
+		ModelAndView model = new ModelAndView("egresado/formacion");
+		
+		String val = ToStringBuilder.reflectionToString(formFormacion);
+		
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
 		return model;
 	}
 
 	@RequestMapping(value = "/idiomas", method = RequestMethod.GET)
 	public ModelAndView paginaIdiomas(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		String nivel[] = {"Basico","Intermedio","Avanzado"};
 		ModelAndView model = new ModelAndView("egresado/idiomas");
+		model.addObject("nivel", nivel);
+		model.addObject("formIdioma", new FormIdioma());
+		
+		return model;
+	}
+	
+	//guardar idiomas
+	@RequestMapping(value = "/idiomas", method = RequestMethod.POST)
+	public ModelAndView guardarIdioma(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formIdioma") FormIdioma formIdioma,
+			BindingResult result) throws ServletException, IOException{
+		ModelAndView model = new ModelAndView("egresado/idiomas");
+		
+		String val = ToStringBuilder.reflectionToString(formIdioma);
+		
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
 		return model;
 	}
 
@@ -95,6 +200,26 @@ public class PaginasEgresadoController {
 	public ModelAndView paginaPerfil(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("egresado/perfil");
+		model.addObject("formPerfil", new FormPerfil());
+		return model;
+	}
+	
+	// Guardar perfil
+	@RequestMapping(value = "/perfil", method = RequestMethod.POST)
+	public ModelAndView guardarPerfil(HttpServletRequest request,
+			HttpServletResponse response, 
+			@Valid @ModelAttribute("formPerfil") FormPerfil formPerfil,
+			BindingResult result) throws ServletException, IOException{
+		ModelAndView model = new ModelAndView("egresado/perfil");
+		
+		String val = ToStringBuilder.reflectionToString(formPerfil);
+		
+		if(result.hasErrors()){
+			model.addObject(val);
+		}else{
+			log.debug(val);
+		}
+		
 		return model;
 	}
 
@@ -142,7 +267,7 @@ public class PaginasEgresadoController {
 		if(result.hasErrors()){
 			model.addObject(result);
 		}else{
-			
+			//TODO: llave primaria del constructor
 			Egresado e = new Egresado("1", formEgresado.getNombre(), formEgresado.getApellidoPaterno(), formEgresado.getApellidoMaterno(), formEgresado.getCurp(), formEgresado.getCorreo(), Sexo.get(formEgresado.getSexo()), Estatus.INACTIVO);
 			service.registrarEgresado(e);
 			

@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,19 +59,25 @@
       <div class="row marketing" height=700>
         <div class="col-lg-12">
 		
-		<form class="form-horizontal" role="form">
+		<form:form class="form-horizontal" modelAttribute="formFormacion" action="formacion" role="form">
 		
 		  <div class="form-group">
 			<label class="col-lg-3 control-label">Nombre Institución:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtNoInst">
+					<form:input type="text" class="form-control" id="txtNoInst" path="nombre"/>
+					<spring:hasBindErrors name="formFormacion">
+						<form:errors path="nombre"/>
+					</spring:hasBindErrors>
 				</div>
 		 </div>
 		  
 		 <div class="form-group">
 		    <label class="col-lg-3 control-label">Nombre del Programa Educativo:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtPE" >
+					<form:input type="text" class="form-control" id="txtPE" path="nombrePrograma"/>
+					<spring:hasBindErrors name="formFormacion">
+						<form:errors path="nombre"/>
+					</spring:hasBindErrors>
 				</div>
 		</div>
 		  
@@ -76,7 +85,10 @@
 		  <div class="form-group">
 		  	<label class="col-lg-3 control-label">Especialidad:</label>
 				<div class="col-lg-8">
-					<input type="txt" class="form-control" id="txtEspe" >
+					<form:input type="txt" class="form-control" id="txtEspe" path="especialidad"/>
+					<spring:hasBindErrors name="formFormacion">
+						<form:errors path="nombre"/>
+					</spring:hasBindErrors>
 				</div>
 		   </div>
 		  		  	  
@@ -87,7 +99,7 @@
 			  <button type="submit" class="btn btn-default">Cancelar</button>
 		</div>
 	  
-		</form>
+		</form:form>
 
 
         </div>
