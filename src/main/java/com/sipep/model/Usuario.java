@@ -16,7 +16,8 @@ public class Usuario {
 		this.clave = clave;
 		this.rol = rol;
 	}
-	
+
+
 	public void crearCuenta(){}
 	public void iniciarSesion(){}
 	public void cerrarSesion(){}

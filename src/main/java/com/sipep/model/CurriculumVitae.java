@@ -15,12 +15,12 @@ public class CurriculumVitae {
 	private List<Curso> cursos;
 	private List<Idioma> idiomas;
 	private String habilidades;
-	private Egresado egresado;
+	public Egresado idEgresado;
 	
 	
 	public CurriculumVitae(String id, Egresado egresado) {
 		this.idCurriculum = id;
-		this.egresado = egresado;
+		this.idEgresado = egresado;
 		formacionesAcademicas = new ArrayList<FormacionAcademica>();
 		experiencias = new ArrayList<Experiencia>();
 		cursos = new ArrayList<Curso>();
@@ -54,6 +54,9 @@ public class CurriculumVitae {
 	public String getIdCurriculum() {
 		return idCurriculum;
 	}
-
+	
+	public Egresado getIdEgresado(){
+		return idEgresado;
+	}
 	
 }
