@@ -11,7 +11,7 @@ create table usuario(
 );
 
 create table egresado(
-	id_egresado int,
+	id_egresado int AUTO_INCREMENT,
 	nombre varchar(30) not null,
 	apellido_paterno varchar(30) not null,
 	apellido_materno varchar(30) not null,

@@ -1,7 +1,10 @@
 package com.sipep.controler.form;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class FormIdioma {
 	
+	@NotBlank
 	private String idioma;
 	private String nivel;
 	

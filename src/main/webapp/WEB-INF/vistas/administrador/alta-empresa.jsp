@@ -43,7 +43,7 @@
 
         </ul>
 	<img src="img/sipep.png"/>
-        <span class="text-muted titulo">Digitalizaci&oacuten de CV</span>
+        <span class="text-muted titulo">Digitalizaci&oacute;n de CV</span>
       </div>
 
       <!-- titulo de formulario -->

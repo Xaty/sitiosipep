@@ -40,17 +40,17 @@
 	-->
         </ul>
 	<img src="img/sipep.png"/>
-        <span class="text-muted titulo">Digitalizaci&oacuten de CV</span>
+        <span class="text-muted titulo">Digitalizaci&oacute;n de CV</span>
       </div>
 	<div class="row marketing">
 		<div class="col-lg-8">
 		      <div id="jumbotron" class="jumbotron">
 			<h2>SIPEP</h2>
 			<p class="lead">
-				El <b>Sistema de Integraci&oacuten al Primer Empleo Profesional</b>, 
+				El <b>Sistema de Integraci&oacute;n al Primer Empleo Profesional</b>, 
 				permite a los usuarios elaborar su
 				curriculum vitae digitalizado, difundiendo de esta 
-				forma la informaci&oacuten a las empresas vinculadas
+				forma la informaci&oacute;n a las empresas vinculadas
 				para apoyarte a obtener tu primer empleo
 			</p>
 			<p><a class="btn btn-lg btn-success" href="../egresado/registro">Registrate!</a></p>
@@ -59,7 +59,7 @@
 		<div class="col-lg-4">
 			<form role="form">
 			  <div class="form-group">
-			    <label for="exampleInputEmail1">Correo electr&oacutenico</label>
+			    <label for="exampleInputEmail1">Correo electr&oacute;nico</label>
 			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="tu@correo.com">
 			  </div>
 			  <div class="form-group">
@@ -67,7 +67,7 @@
 			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="clave">
 			  </div>
 			  <div class="form-group">
-			    <a href="">Olvidaste tu contrase&ntildea</a>
+			    <a href="">Olvidaste tu contrase&ntilde;a</a>
 			  </div>
 			  <div class="checkbox">
 			    <label>
@@ -88,13 +88,13 @@
 		</h4>
 
 		<ul>
-			<li>Digitalizaci&oacuten de Curriculums Vitaes</li>			
+			<li>Digitalizaci&oacute;n de Curriculums Vitaes</li>			
 	          	<li>Ubicar al usuario a su primer empleo</li>
 		</ul>
 
           	<h4>
 			<span class="glyphicon glyphicon-user"></span>
-			Tips de presentaci&oacuten
+			Tips de presentaci&oacute;n
 		</h4>
             <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. <a href="tips">Ver m&aacute;s</a></p>
 
@@ -111,7 +111,7 @@
       </div>
 
       <div class="footer">
-        <p>Todos los derechos reservados de &copy; SIPEP 2013 - Sistema de Integraci&oacuten al Primer Empleo</p>
+        <p>Todos los derechos reservados de &copy; SIPEP 2013 - Sistema de Integraci&oacute;n al Primer Empleo</p>
       </div>
 
     </div> <!-- /container -->

@@ -32,7 +32,7 @@ import com.sipep.service.EgresadoService;
 
 @Controller
 @RequestMapping("/egresado")
-@SessionAttributes({"dias", "meses", "anios"})
+@SessionAttributes({"dias", "meses", "anios", "nivel"})
 public class PaginasEgresadoController {
 	
 	private final Log log = LogFactory.getLog(getClass());
