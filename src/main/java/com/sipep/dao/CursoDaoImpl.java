@@ -12,11 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.sipep.model.CurriculumVitae;
 import com.sipep.model.Curso;
-import com.sipep.model.Egresado;
-import com.sipep.model.Estatus;
-import com.sipep.model.Sexo;
+
 
 @Repository
 public class CursoDaoImpl extends JdbcTemplate implements CursoDao{
